@@ -8,20 +8,21 @@
 
 
 h = 0
-leap = 1
-from math import sqrt
-# 直接使用import math出现无法识别sqrt的情况
+leap = 1#管控打印
+import math
+# 直接使用import math调用sqrt出现无法识别sqrt的情况,可以用math.sqrt()处理掉，也可以用from math import sqrt
+#%4d比%d长
 for m in range(101,201):
-    k = int(sqrt(m + 1))
+    k = int(math.sqrt(m + 1))
     for i in range(2,k + 1):
         if m % i == 0:
             leap = 0
             break
     if leap == 1:
-        print ('%-4d' % m)
+        print ('%4d' % m)
         h += 1
         if h % 10 == 0:
             print ('')
-    leap = 1
+    leap = 1#重置leap
 print( 'The total is %d' % h)
 
