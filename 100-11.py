@@ -5,17 +5,26 @@
 # 个月后，也会每个月再生一对小小兔子.
 # 问题：假设条件，兔子都不死的情况下，问每个月的兔子总数为多少？
 
-# month=int(raw_input("pls input time"))
-# birth=month/3
-#
-# for i in range(birth):
-#     rabit=
+#正常计算
+time=int(input("time:"))
+x=1
+y=1
+if (time==1)or(time==2):
+    print(y)
+for i in range(time-2):
+        # z=x+y
+        # x=y
+        # y=z
+        #下面是简写
+        x,y=y,x+y
+print(y)
 
-a1 = 1
-b2 = 1
-for i in range(1, 10):
-        print '%12ld %12ld' % (a1, b2),
-        if (i % 3) == 0:
-            print ''
-        a1 = a1 + b2
-        b2 = a1 + b2
+#递归recursion
+def rabbit(time):
+    m1=1
+    m2=2
+    if time==1 or time==2:
+        return 1
+    else:
+        return rabbit(time - 1) + rabbit(time - 2)
+print(rabbit(time))
