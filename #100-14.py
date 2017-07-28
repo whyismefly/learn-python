@@ -31,7 +31,7 @@ import math
 #                     print '{} *'.format(index),
 #                 break
 # n=int(input("num"))
-n=int(16)
+n=int(7)
 if n<0:
 		print("wrong number")
 elif n in[1]:
@@ -39,7 +39,7 @@ elif n in[1]:
 y=1
 #引入y作为对输入的n是否继续检测做判断
 while(y):
-    for i in range(2,int(math.sqrt(n)+2)):
+    for i in range(2,int(math.sqrt(n)+1)):
     # for i in range(2, n + 1):
      if  n % i == 0:
         n=int(n/i);
@@ -54,5 +54,3 @@ while(y):
         y=0
         if n!=1:
             print(n)
-        else:
-            print("sushu")
