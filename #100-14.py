@@ -11,6 +11,8 @@
 
 import math
 #关于如何跳出循环重2开始的哪一点没有弄明白
+#使用while控制是否继续检测输入数字，在其中使用for控制对每个因子的检测
+#引入y作为对输入的n是否继续检测做判断
 
 # def reduceNum(n):
 #     print '{} = '.format(n),
@@ -30,8 +32,10 @@ import math
 #                 else : # index 一定是素数
 #                     print '{} *'.format(index),
 #                 break
-# n=int(input("num"))
-n=int(7)
+
+
+n=int(input("num"))
+m=n
 if n<0:
 		print("wrong number")
 elif n in[1]:
@@ -46,11 +50,9 @@ while(y):
         print(i)
         print(" ")
         break
-        if n==1:
-            break
-        else:
-            y = 0
     else :
         y=0
-        if n!=1:
+        if m==n:
+            print("sushu")
+        else:
             print(n)
