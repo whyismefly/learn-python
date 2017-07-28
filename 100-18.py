@@ -5,3 +5,15 @@
 #
 # 程序分析：关键是计算出每一项的值。
 
+num=input("num")
+nextnum=num
+y=nextnum
+time=input("time")
+if time==1:
+    print num
+else:
+    for i in range(time-1):
+        nextnum=nextnum*10+num
+        y=y+nextnum
+        print nextnum
+    print y
