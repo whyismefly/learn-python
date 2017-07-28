@@ -10,17 +10,33 @@
 
 #关于如何跳出循环重2开始的哪一点没有弄明白
 
-import math
-l=[]
-def resolve(num):
-	for i in range(2,int(math.sqrt(num))+1):
-		if num%i==0:
-			l.append(i)
-			num=num/i
-			resolve(num)
-			break
+def reduceNum(n):
+    print '{} = '.format(n),
+    if not isinstance(n, int) or n <= 0 :
+        print '请输入一个正确的数字 !'
+        exit(0)
+    elif n in [1] :
+        print '{}'.format(n)
+    while n not in [1] : # 循环保证递归
+        for index in xrange(2, n + 1) :
+			#xrange这个迭代器每次都是从头开始迭代，不像range继续迭代
+            if n % index == 0:
+                n /= index # n 等于 n/index
+                if n == 1:
+                    print index
+                else : # index 一定是素数
+                    print '{} *'.format(index),
+                break
 
+def getnum(n):
+	if n<0:
+		print"wrong number"
+	elif n in[1]:
+		print n
+	for n in xrange(2,n+1):
+		if
 
-num=int(raw_input())
-resolve(num)
-print l
+getnum(2)
+
+# x=input("num：\n")
+# reduceNum(x)
