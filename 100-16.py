@@ -63,14 +63,22 @@ if __name__ == '__main__':
 
     print(datetime.date.today())
     print(datetime.date.today().strftime('%d/%m/%Y'))
+    print("\n")
 
+    date1=datetime.date(2000,1,1)
+    print date1
+    print(date1.strftime("%d/%m/%y"))
+    print("\n")
 
-    miyazakiBirthDate = datetime.date(1941, 1, 5)
-    print(miyazakiBirthDate.strftime('%d/%m/%Y'))
     # 日期算术运算
-    miyazakiBirthNextDay = miyazakiBirthDate + datetime.timedelta(days=1)
-    print(miyazakiBirthNextDay.strftime('%d/%m/%Y'))
+    date2 = date1 + datetime.timedelta(days=1)
+    print(date2.strftime('date2 %d/%m/%Y'))
 
-    # 日期替换
-    miyazakiFirstBirthday = miyazakiBirthDate.replace(year=miyazakiBirthDate.year + 1)
-    print(miyazakiFirstBirthday.strftime('%d/%m/%Y'))
+    date3=date1-datetime.timedelta(days=1)
+    print(date3.strftime('%Y/%m/%d'))
+    print("\n")
+
+    # 日期变更
+    date4 = date2.replace(year=date2.year + 1)
+    print(date4.strftime('%Y/%m/%d'))
+    print(date2.strftime('%Y/%m/%d'))
