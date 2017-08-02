@@ -9,4 +9,4 @@ z=20
 for i in  range(1,z+1):
     x=x*i
     y+=x
-    print x,y
+    print (x,y)
