@@ -26,7 +26,18 @@ out_file.close()
 in_file.close()
 
 """
+
 $ cat test.txt 这个是LINUX里面的指令
+
+
+Notice at the end of the WYSS I used something called cat? It’s an old command that
+“concatenates” fi les together, but mostly it’s just an easy way to print a fi le to the screen.
+Type man cat to read about it.
+
+When I try to make this script shorter, I get an error when I close the fi les at the end.
+You probably did something like this, indata = open(from_file).read(), which means you
+don’t need to then do in_file.close() when you reach the end of the script. It should already
+be closed by Python once that one line runs.
 
 Microsoft Windows [版本 6.1.7601]
 版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
