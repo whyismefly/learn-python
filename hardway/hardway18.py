@@ -20,3 +20,5 @@ print_two_again("zed","SHAW")
 print_one("first")
 print_none()
 
+# Then we tell it we want *args (asterisk args), which is a lot like your argv parameter but
+# for functions. This has to go inside () parentheses to work.
