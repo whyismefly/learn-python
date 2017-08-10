@@ -2,7 +2,7 @@
 # encoding:utf-8
 
 """
-#list 只能掉下标
+#list 只能调下标
 things=['a','b','c','d']
 
 print things
