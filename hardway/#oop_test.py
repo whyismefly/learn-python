@@ -29,12 +29,15 @@ if len(sys.argv)==2 and sys.argv[1]=="english":
 
 for word in urlopen(WORD_URL).readlines():
     WORDS.append(word.strip())
+    #strip
 
 def convert(snippet,phrase):
     class_names=[w.capitalize() for w in random.sample(WORDS,snippet.count("%%%"))]
+    #capitalize
     other_names=random.sample(WORDS,snippet.count("***"))
     results=[]
     param_names=[]
+    #capitalize
 
     for i in range(0,snippet.count("@@@")):
         param_count=random.randint(1,3)
