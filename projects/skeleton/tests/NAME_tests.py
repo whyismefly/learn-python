@@ -1,6 +1,6 @@
 from nose.tools import *
 import NAME
-
+# sys.path.append("E:\GITHUBWORK\learn-python\projects\skeleton")
 def setup() :
     print "setup"
 
