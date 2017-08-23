@@ -458,3 +458,33 @@ PS E:\GITHUBWORK\learn-python\projects>
 """
 
 #可以看到这里仍然有报错，后面将会继续处理
+
+"""
+Windows PowerShell
+版权所有 (C) 2009 Microsoft Corporation。保留所有权利。
+
+PS C:\Users\Administrator> cd E:\GITHUBWORK\learn-python\projects\skeleton
+PS E:\GITHUBWORK\learn-python\projects\skeleton> ls
+
+
+    目录: E:\GITHUBWORK\learn-python\projects\skeleton
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d----         2017/8/21     15:32            bin
+d----         2017/8/21     15:32            docs
+d----         2017/8/23     10:15            NAME
+d----         2017/8/23     10:35            tests
+-a---         2017/8/23     10:22        434 setup.py
+
+PS E:\GITHUBWORK\learn-python\projects\skeleton> nosetests
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+OK
+PS E:\GITHUBWORK\learn-python\projects\skeleton>
+"""
+
+#注意结构代码的修改
