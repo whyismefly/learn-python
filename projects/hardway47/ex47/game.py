@@ -6,6 +6,7 @@
 #         self.paths=[]
 #
 #     def __ge__(self, direction):
+#       这一行写错了
 #         return  self.paths.get(direction,None)
 #
 #     def add_paths(self,paths):
