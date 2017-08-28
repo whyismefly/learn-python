@@ -35,10 +35,9 @@ from nose.tools import *
 
 import nose
 import sys
-# sys.path.append("../ex47")
-# 如果不用ex47.game则需要加上这句
+sys.path.append("../ex47")
+from game import Room
 
-from ex47.game import Room
 
 def test_room():
     gold = Room("GoldRoom", """This room has gold in it you can grab. There's a
