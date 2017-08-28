@@ -1,6 +1,7 @@
 from sys import exit
 from random import randint
-import hardway43_classes
+import #hardway43_classes
+
 class Scene(object):
 
     def enter(self):
