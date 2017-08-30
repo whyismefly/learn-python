@@ -1,6 +1,5 @@
 from sys import exit
 from random import randint
-import #hardway43_classes
 
 class Scene(object):
 
@@ -33,7 +32,7 @@ class Death(Scene):
         print Death.quips[randint(0,len(self.quips)-1)]
         exit(1)
 
-class CentralCprridor(Scene):
+class CentralCorridor(Scene):
     def enter(self):
         print "The Gothons of Planet Percal #25 have invaded your ship and destroyed"
         print "your entire crew.  You are the last surviving member and your last"
@@ -203,6 +202,7 @@ class Map(object):
     def opening_scene(self):
         return  self.next_scene(self.start_scene)
 
-    a_map = Map('central_corridor')
-    a_game = Engine(a_map)
-    a_game.play()
+
+a_map = Map('central_corridor')
+a_game = Engine(a_map)
+a_game.play()
