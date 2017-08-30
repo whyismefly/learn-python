@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#encoding:utf-8
+
 # from nose.tools import *
 # from ex47.game import Room
 #
@@ -34,9 +37,10 @@
 from nose.tools import *
 
 import nose
-import sys
-sys.path.append("../ex47")
-from game import Room
+#import sys
+# sys.path.append("../ex47")
+#使用sys.path.append("../ex47")这句话在powershell中会导致No module named game，需要在pycharm中手动添加
+from ex47.game import Room
 
 
 def test_room():
