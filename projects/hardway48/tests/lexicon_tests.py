@@ -1,5 +1,10 @@
+#!/usr/bin/python
+#encoding:utf-8
 from nose.tools import *
-from ex48.ex48 import lexicon
+import sys
+sys.path.append("../ex48")
+#注意处理方法，用shell时得换回来，不能用sys添加的方式
+from ex48 import lexicon
 
 def test_directions():
     assert_equal(lexicon.scan("north"),[('direction','north')])
