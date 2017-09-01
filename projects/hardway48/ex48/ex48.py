@@ -30,6 +30,13 @@ class Lexicon(object):
     def scan(self,sentence):
         self.sentences=sentence
         self.words=sentence.split()
-#not yet
+
+        for word in self.words:
+            if word.isdigit():
+                self.list.append(self.sentences[word],int (word))
+            else:
+                self,list.append(self.sentences[word],word)
+
+
 
 lexicon=Lexicon()

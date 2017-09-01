@@ -4,6 +4,7 @@ from nose.tools import *
 import sys
 sys.path.append("../ex48")
 #注意处理方法，用shell时得换回来，不能用sys添加的方式
+
 from ex48 import lexicon
 
 def test_directions():
