@@ -1,11 +1,13 @@
 #!/usr/bin/python
 #encoding:utf-8
 from nose.tools import *
-import sys
-sys.path.append("../ex48")
+import re
+print re.sub('([bcdfghjklmnpqrstvwxyz])', r'o\1', 'tobias')
+# import sys
+# sys.path.append("../ex48")
 #注意处理方法，用shell时得换回来，不能用sys添加的方式
 
-from ex48 import lexicon
+from ex48.ex48 import lexicon
 
 def test_directions():
     assert_equal(lexicon.scan("north"),[('direction','north')])
@@ -32,21 +34,21 @@ def test_stops():
                           ])
 
 def test_nouns():
-    assert_equal(lexicon.scan("bear"), [('noun', 'bear')])
+    assert_equal(lexicon.scan('bear'), [('noun', 'bear')])
     result = lexicon.scan("bear princess ")
     assert_equal(result, [('noun', 'bear'),
                           ('noun', 'princess')
                           ])
 
 def test_numbers():
-    assert_equal(lexicon.scan("1234"), [('number', 1234)])
+    assert_equal(lexicon.scan('1234'), [('number', 1234)])
     result = lexicon.scan("3 91234 ")
     assert_equal(result, [('number', 3),
                           ('number', 91234)
                           ])
 
 def test_errors():
-    assert_equal(lexicon.scan("ASDFADFASDF"),[('error', 'ASDFADFASDF')])
+    assert_equal(lexicon.scan('ASDFADFASDF'),[('error', 'ASDFADFASDF')])
     result=lexicon.scan("bear IAS princess")
     assert_equal(result,[('noun', 'bear'),
                           ('error', 'IAS'),

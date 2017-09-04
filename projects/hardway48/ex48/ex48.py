@@ -1,4 +1,6 @@
 
+import re
+print re.sub('([bcdfghjklmnpqrstvwxyz])', r'o\1', 'tobias')
 
 class Lexicon(object):
 
@@ -30,13 +32,12 @@ class Lexicon(object):
     def scan(self,sentence):
         self.sentences=sentence
         self.words=sentence.split()
-
-        for word in self.words:
-            if word.isdigit():
-                self.list.append(self.sentences[word],int (word))
-            else:
-                self,list.append(self.sentences[word],word)
-
-
+        try:
+            for i in range(len(self.words)):
+                if self.words[i] in sentence:
+                    list.append(sentence[self.words[i]])
+            return list
+        except (IOError ,ZeroDivisionError),e:
+            return e.message
 
 lexicon=Lexicon()
