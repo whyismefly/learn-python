@@ -8,7 +8,7 @@ class Sentence(object):
 
         self.subject = subject[1]
         self.verb = verb[1]
-        self.object = object[1]
+        self.object = obj[1]
 
     def peek(word_list):
         if word_list:
