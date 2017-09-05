@@ -1,8 +1,6 @@
 #!/usr/bin/python
 #encoding:utf-8
 from nose.tools import *
-import re
-print re.sub('([bcdfghjklmnpqrstvwxyz])', r'o\1', 'tobias')
 # import sys
 # sys.path.append("../ex48")
 #注意处理方法，用shell时得换回来，不能用sys添加的方式
