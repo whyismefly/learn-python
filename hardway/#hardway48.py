@@ -18,19 +18,23 @@
 #         return None
 #
 #
+first=  ("123","123")
+second= ("abc","ABC")
 
-sentence=[
-    ("123","123"),
-    ("abc","ABC")
-]
+sentence={first,second}
 
 def scan(sentences):
     list=[]
     words=sentences.split()
     # for i in range(len(words)):
-    if words in sentence:
-        print words
-        print list
+    #     if words[i] in second:
+    #         print 11111
 
-scan("sdwhuiofhweofgio weiofhio wfrm ojrew 21313143 wr43t56 54y6h7 ABC")
+    # for i in words:
+    #     # if i.isdigit():
+    #     #     print i
+    #     if i in sentence:
+    #         print i
+
+scan("123 sdwhuiofhweofgio weiofhio wfrm ABC 21313143 wr43t56 54y6h7 ")
 

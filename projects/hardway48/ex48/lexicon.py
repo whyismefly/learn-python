@@ -44,9 +44,9 @@ first_directs=(
     ("direction","east"),
     ("direction","west"),
     ("direction","down"),
-    ("direction","up")
-    ("direction","letf"),
-    ("direction","right")
+    ("direction","up"),
+    ("direction","left"),
+    ("direction","right"),
     ("direction", "back")
 )
 
@@ -88,5 +88,23 @@ def convert_number(s):
 def scan(list,words,sentences):
     list=[]
     words=sentences.split()
+    for i in range(len(words)):
+        if words[i] in first_directs:
+            list.append(('direction',words[i]))
+
+        elif words[i] in second_verbs:
+            list.append(('verb',words[i]))
+
+        elif words[i] in third_stops:
+            list.append(('stops',words[i]))
+
+        elif words[i] in fourth_nouns:
+            list.append(('noun',words[i]))
+
+        elif words[i] in fifth_nums:
+            list.append(('num',words[i]))
+
+
+
 
 
