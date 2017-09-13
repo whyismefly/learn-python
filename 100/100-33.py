@@ -1,4 +1,9 @@
-time=3
-for i in range(time):
-    word = raw_input("input list :"),time
-    print word
+#!/usr/bin/python
+# encoding:utf-8
+
+# 题目：按逗号分隔列表。
+# 程序分析：无。
+
+list=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+
+print list

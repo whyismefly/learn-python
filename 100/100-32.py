@@ -19,5 +19,10 @@ time=int(raw_input("how many words:"))
 lis=list(time)
 print "-"*20
 last2first(lis)
+print "-"*20
+lis.reverse()
+#自带的倒序排序方法
+print lis
+
 
 
