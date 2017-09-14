@@ -6,4 +6,10 @@
 
 list=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
-print list
+# print (str(n) for n in list)
+# for n in list:
+#     print n
+
+douhao=','.join(str(n) for n in list)
+print douhao
+
