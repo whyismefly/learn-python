@@ -4,12 +4,11 @@
 # 题目：求100之内的素数。
 # 程序分析：无。
 
-import math
+for i in range(2,101):
+        for j in range(2,i):
+            x=i%j
+            if x==0:
+                break
+        else:
+                print i
 
-for i in range(3,101):
-    j=2
-    x=i%j
-    if x!=0:
-        print i
-    else:
-        j+=1
