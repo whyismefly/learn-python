@@ -2,31 +2,25 @@
 # encoding:utf-8
 
 #本金
-benjin=120000
-
+benjin=60000
 #年利率
-yinhanglilv=0.03
+yinhanglilv=0
 #月化利率
 yueyinhanglilv=(1+yinhanglilv)**(1./12)-1
 print "月化利率",yueyinhanglilv
-
 print (1+yueyinhanglilv)**12
 
 #时间年
 yinhangnianshu=3
 #年收益利率
-shouyililv=0.04
+shouyililv=0.08
 #月收益利率
 yueshouyililv=(1+shouyililv)**(1./12)-1
 print "月收益利率",yueshouyililv
-
 print (1+yueshouyililv)**12
 
-
-
-
 #分期数
-fenqishu=35
+fenqishu=24
 #
 yuebenjin=benjin/fenqishu
 
@@ -40,7 +34,7 @@ print "-" * 20
 print benjin*yueshouyililv,"-------"
 
 zonglirun=0
-for i in range(35):
+for i in range(fenqishu):
     lirun=benjin*yueshouyililv
     zonglirun+=lirun
     benjin=benjin-yinhangmeiyue+lirun
