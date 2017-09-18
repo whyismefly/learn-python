@@ -1,20 +1,23 @@
-1505705341240	geckodriver	INFO	Listening on 127.0.0.1:52819
-1505705343289	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1505705344427	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
-1505705347144	Marionette	INFO	Enabled via --marionette
-[GPU 8436] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1505717598435	geckodriver	INFO	Listening on 127.0.0.1:55749
+1505717600481	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1505717601590	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
+1505717602848	Marionette	INFO	Enabled via --marionette
 JavaScript error: resource:///modules/ExtensionsUI.jsm, line 50: TypeError: RecentWindow.getMostRecentBrowserWindow(...) is null
-1505705354993	Marionette	INFO	Listening on port 52825
-1505705355000	Marionette	INFO	Listening on port 52825
-1505705355416	Marionette	WARN	TLS certificate errors will be ignored for this session
-1505705355448	Marionette	DEBUG	loaded listener.js
-1505705355475	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
-1505705355497	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
-1505705355497	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
-1505705355633	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081//?mscg-ip=134.64.50.241"
-1505705356400	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081//blank.html"
-1505705356413	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081//blank.html"
-1505705356441	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081/style/dcn/index.jsp?paramStr=CE9O7Wr%2BIJpFd2GiZNkepehB4i3vvdn5RW1Lpu84pK34t0tYOuRs2GmiJjjpFaKpFNPST%2Bt1q8lb%0ARmzBMEqYgaukGobpmTfzz1uPFPiZ7gst%2BT%2BeM89anCvPsn3RavxNM7CfXzaI3QnOrjLHEcerTktT%0AzOICjJhmrN1QS13RnYKBjUJoOPRwkiFWYrQIh8lOiYtVc8HTbMqvMvoDeu9m%2FSSw1hnKTGImTM5N%0AMUfIm1ntjjY3OKeoOw%3D%3D"
-1505705357831	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081/style/dcn/index.jsp?paramStr=CE9O7Wr%2BIJpFd2GiZNkepehB4i3vvdn5RW1Lpu84pK34t0tYOuRs2GmiJjjpFaKpFNPST%2Bt1q8lb%0ARmzBMEqYgaukGobpmTfzz1uPFPiZ7gst%2BT%2BeM89anCvPsn3RavxNM7CfXzaI3QnOrjLHEcerTktT%0AzOICjJhmrN1QS13RnYKBjUJoOPRwkiFWYrQIh8lOiYtVc8HTbMqvMvoDeu9m%2FSSw1hnKTGImTM5N%0AMUfIm1ntjjY3OKeoOw%3D%3D"
-1505705357833	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081//?mscg-ip=134.64.50.241"
-1505705374368	Marionette	INFO	New connections will no longer be accepted
+[GPU 8676] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1505717624638	Marionette	INFO	Listening on port 55755
+[Child 10136] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 10136] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1505717624702	Marionette	INFO	Listening on port 55755
+1505717625545	Marionette	WARN	TLS certificate errors will be ignored for this session
+1505717625696	Marionette	DEBUG	loaded listener.js
+1505717626191	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1505717626224	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1505717626225	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1505717626235	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081//?mscg-ip=134.64.50.241"
+1505717626308	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081//blank.html"
+1505717626313	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081//blank.html"
+1505717626494	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://134.64.116.90:8081/style/dcn/index.jsp?paramStr=CE9O7Wr%2BIJpFd2GiZNkepehB4i3vvdn5RW1Lpu84pK34t0tYOuRs2GmiJjjpFaKpFNPST%2Bt1q8lb%0ARmzBMEqYgbmr0HUsGfc2gkJgVv3J01xEFmMm17d6yjY%2BkS3eib833qEh1HuPdD6wcGyQPMW%2FTHps%0Aftp9uVDj6apBNXmoyvk5BxNqfxVDbivPsn3RavxNrEfIwRdQoypEfNCWjuM6vKCUauG51vhdk6kE%0Au2LRDiKfe2f9X3PQeQ%3D%3D"
+1505717626871	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081/style/dcn/index.jsp?paramStr=CE9O7Wr%2BIJpFd2GiZNkepehB4i3vvdn5RW1Lpu84pK34t0tYOuRs2GmiJjjpFaKpFNPST%2Bt1q8lb%0ARmzBMEqYgbmr0HUsGfc2gkJgVv3J01xEFmMm17d6yjY%2BkS3eib833qEh1HuPdD6wcGyQPMW%2FTHps%0Aftp9uVDj6apBNXmoyvk5BxNqfxVDbivPsn3RavxNrEfIwRdQoypEfNCWjuM6vKCUauG51vhdk6kE%0Au2LRDiKfe2f9X3PQeQ%3D%3D"
+1505717626873	Marionette	DEBUG	Received DOM event "pageshow" for "http://134.64.116.90:8081//?mscg-ip=134.64.50.241"
+console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
+1505717656951	Marionette	INFO	New connections will no longer be accepted

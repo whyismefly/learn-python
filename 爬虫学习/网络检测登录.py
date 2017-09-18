@@ -16,7 +16,7 @@ import unittest, time, re
 #网络登录
 class Login(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.base_url = "http://134.64.116.90:8081/"
         self.verificationErrors = []
