@@ -1,28 +1,39 @@
 #!/usr/bin/python
 # encoding:utf-8
 
+print "月3755.37"
+x=3755.37*35
+print "总",x
+print x/120000
+y=(x/120000)**(1./35)-1
+print y
+z=(y+1)**12-1
+print z
+print
+print "-" * 40
+
 #本金
-benjin=60000
+benjin=80000        #########
 #年利率
-yinhanglilv=0
+yinhanglilv=0.0     #########
 #月化利率
 yueyinhanglilv=(1+yinhanglilv)**(1./12)-1
 print "月化利率",yueyinhanglilv
 print (1+yueyinhanglilv)**12
+#分期数
+fenqishu=24     #########
+yuebenjin=benjin/fenqishu
 
 #时间年
-yinhangnianshu=3
+yinhangnianshu=3        #########
 #年收益利率
-shouyililv=0.08
+shouyililv=0.08     #########
 #月收益利率
 yueshouyililv=(1+shouyililv)**(1./12)-1
 print "月收益利率",yueshouyililv
 print (1+yueshouyililv)**12
 
-#分期数
-fenqishu=24
-#
-yuebenjin=benjin/fenqishu
+
 
 yinhangzong=benjin*((1+yinhanglilv)**yinhangnianshu)
 print "总金额",yinhangzong
