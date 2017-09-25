@@ -19,13 +19,17 @@ def getHtml(url):
 
 # print getImg(html)
 
-m110="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=4"
-m150="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=5"
-m520="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=12"
+# m110="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=4"
+# m150="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=5"
+# m520="http://www.apta.gov.cn/Officer/Summary?examid=64&&pcode=&pi=12"
+#
+# h110=getHtml(m110)
+# h150=getHtml(m150)
+# h520=getHtml(m520)
+# print h110,h150,h520
 
-h110=getHtml(m110)
-h150=getHtml(m150)
+m520="http://134.64.116.90:8030/sdp/p1446609752151_AutoCreateZul_9.zul;Managed_Server_Name=134.64.70.56:8020"
 h520=getHtml(m520)
+print h520
 
 
-print h110,h150,h520
