@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # encoding:utf-8
+
 '''Simple million word count program.
     main idea is Python pairs words
     with the number of times
@@ -295,6 +296,7 @@ Exeunt'''
 wordlist = wordstring.split()
 
 wordfreq = [wordlist.count(w) for w in wordlist]
+#学习这个写法
 
 print("String\n {} \n".format(wordstring))
 print("List\n {} \n".format(str(wordlist)))
