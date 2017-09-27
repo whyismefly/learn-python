@@ -21,10 +21,11 @@ if __name__ == '__main__':
     import turtle
 
     turtle.title("画圆")
-    turtle.setup(800, 600, 0, 0)
+    turtle.setup(800, 600, 100, 100)
     pen = turtle.Turtle()
     pen.color("yellow")
     pen.width(5)
     pen.shape("turtle")
     pen.speed(1)
     pen.circle(100)
+
