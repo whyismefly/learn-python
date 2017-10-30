@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-#encoding:utf-8
+#!/usr/bin/python
+# encoding:utf-8
 
 # 题目：计算字符串长度。　
 
