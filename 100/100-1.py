@@ -1,5 +1,5 @@
 #!usr/bin/python
-#encodeing:utf-8
+# encoding:utf-8
 # Python练习题问题如下：
 # 简述：这里有四个数字，分别是：1、2、3、4
 # 提问：能组成多少个互不相同且无重复数字的三位数？各是多少？
