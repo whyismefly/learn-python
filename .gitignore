@@ -6,3 +6,7 @@
 *.log
 *.iml
 *.xml
+*.xml
+.idea/learn-python.iml
+*.xml
+.idea/learn-python.iml
