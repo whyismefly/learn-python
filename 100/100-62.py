@@ -13,10 +13,22 @@ print str3.find(str4)
 print str3.index(str4)
 print str3.count('ab')
 print "-"*30
-s = 'you me he'
+s = 'eyou me heEEEEEEEEEEEEEEEeeeeeeeeeeeee'
 index=-1
 while True:
     index = s.find('e',index+1)
+    """下次查询从下一位开始"""
     if index==-1:
         break
     print index
+
+s = 'you me he'
+s = list(s)
+while(1):
+     if 'e' in s:
+            index = s.index('e')
+            print index
+            s[index] = '*'
+            """若注释了则无线循环输出"""
+     else:
+             break
