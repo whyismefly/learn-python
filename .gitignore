@@ -10,3 +10,7 @@
 .idea/learn-python.iml
 *.xml
 .idea/learn-python.iml
+*.log
+.idea/learn-python.iml
+*.xml
+.idea/misc.xml
