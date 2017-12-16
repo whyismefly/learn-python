@@ -8,7 +8,9 @@ from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
 """加载cookie"""
-fp=webdriver.FirefoxProfile(r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles')
+# fp=webdriver.FirefoxProfile(r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles')
+fp=webdriver.FirefoxProfile(r'C:\Users\WHY-LENGEND\AppData\Roaming\Mozilla\Firefox\Profiles\1qatadyp.default')
+
 driver=webdriver.Firefox(fp)
 driver.maximize_window()
 
@@ -26,6 +28,13 @@ driver.maximize_window()
 
 """打开蜡笔"""
 driver.get("http://www.labi.com/sms?type=1")
+driver.find_element_by_id("mlog_un").clear()
+driver.find_element_by_id("mlog_un").send_keys("ftxsb")
+driver.find_element_by_id("mlog_pwd").clear()
+driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
+driver.find_element_by_id("btnLogin").click()
+
+
 # js='window.open("http://www.labi.com/sms?type=1");'
 # driver.execute_script(js)
 # driver.find_element_by_id("mlog_un").clear()
@@ -33,7 +42,6 @@ driver.get("http://www.labi.com/sms?type=1")
 # driver.find_element_by_id("mlog_pwd").clear()
 # driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
 # driver.find_element_by_id("mlog_ck").click()
-# driver.find_element_by_xpath("//a[@id='btnLogin']/span").click()
 
 
 
