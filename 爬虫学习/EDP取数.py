@@ -7,100 +7,39 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
+"""加载cookie"""
+fp=webdriver.FirefoxProfile(r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles')
+driver=webdriver.Firefox(fp)
+driver.maximize_window()
 
-# class Login2(unittest.TestCase):
-#     def setUp(self):
-#         self.driver = webdriver.Firefox()
-#         self.driver.implicitly_wait(30)
-#         self.base_url = "http://www.baidu.com/"
-#         self.verificationErrors = []
-#         self.accept_next_alert = True
-#
-#     def test_login2(self):
-#         driver = self.driver
-#         driver.get(
-#             "http://134.64.106.187:8000/sso/login?service=http%3A%2F%2F134.64.106.187"
+"""打开EDP"""
+# driver.get("http://134.64.106.187:8000/sso/login?service=http%3A%2F%2F134.64.106.187"
 #             "%3A8000%2Fportal%2FhomePage%21initHomePage.action%"
 #             "3BManaged_Server_Name%3D134.64.117.183%3A9001")
-#         # driver.find_element_by_id("main").click()
-#         # driver.find_element_by_id("main").click()
-#         # driver.find_element_by_id("username").click()
-#         # driver.find_element_by_id("username").click()
-#         driver.find_element_by_id("username").clear()
-#         driver.find_element_by_id("username").send_keys("920214")
-#         # driver.find_element_by_id("main").click()
-#         # driver.find_element_by_id("password").click()
-#         driver.find_element_by_id("password").clear()
-#         driver.find_element_by_id("password").send_keys("Ft123456")
-#         # driver.find_element_by_id("main").click()
-#         driver.find_element_by_id("msgsid").click()
-#         # driver.find_element_by_id("smscode").click()
-#         driver.find_element_by_id("smscode").clear()
-#         driver.find_element_by_id("smscode").send_keys("1948")
-#         driver.find_element_by_id("submit").click()
 #
-#     def is_element_present(self, how, what):
-#         try:
-#             self.driver.find_element(by=how, value=what)
-#         except NoSuchElementException as e:
-#             return False
-#         return True
-#
-#     def is_alert_present(self):
-#         try:
-#             self.driver.switch_to_alert()
-#         except NoAlertPresentException as e:
-#             return False
-#         return True
-#
-#     def close_alert_and_get_its_text(self):
-#         try:
-#             alert = self.driver.switch_to_alert()
-#             alert_text = alert.text
-#             if self.accept_next_alert:
-#                 alert.accept()
-#             else:
-#                 alert.dismiss()
-#             return alert_text
-#         finally:
-#             self.accept_next_alert = True
-#
-#     def tearDown(self):
-#         self.driver.quit()
-#         self.assertEqual([], self.verificationErrors)
-#
-#
-# if __name__ == "__main__":
-#     unittest.main()
+# driver.find_element_by_id("username").clear()
+# driver.find_element_by_id("username").send_keys("920214")
+# driver.find_element_by_id("password").clear()
+# driver.find_element_by_id("password").send_keys("Ft123456")
+# driver.find_element_by_id("msgsid").click()
 
 
-def test_login2(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        self.base_url = "http://www.baidu.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
+"""打开蜡笔"""
+driver.get("http://www.labi.com/sms?type=1")
+# js='window.open("http://www.labi.com/sms?type=1");'
+# driver.execute_script(js)
+# driver.find_element_by_id("mlog_un").clear()
+# driver.find_element_by_id("mlog_un").send_keys("ftxsb")
+# driver.find_element_by_id("mlog_pwd").clear()
+# driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
+# driver.find_element_by_id("mlog_ck").click()
+# driver.find_element_by_xpath("//a[@id='btnLogin']/span").click()
 
-        driver = self.driver
-        driver.get(
-            "http://134.64.106.187:8000/sso/login?service=http%3A%2F%2F134.64.106.187"
-            "%3A8000%2Fportal%2FhomePage%21initHomePage.action%"
-            "3BManaged_Server_Name%3D134.64.117.183%3A9001")
-        # driver.find_element_by_id("main").click()
-        # driver.find_element_by_id("main").click()
-        # driver.find_element_by_id("username").click()
-        # driver.find_element_by_id("username").click()
-        driver.find_element_by_id("username").clear()
-        driver.find_element_by_id("username").send_keys("920214")
-        # driver.find_element_by_id("main").click()
-        # driver.find_element_by_id("password").click()
-        driver.find_element_by_id("password").clear()
-        driver.find_element_by_id("password").send_keys("Ft123456")
-        # driver.find_element_by_id("main").click()
-        driver.find_element_by_id("msgsid").click()
-        # driver.find_element_by_id("smscode").click()
-        driver.find_element_by_id("smscode").clear()
-        driver.find_element_by_id("smscode").send_keys("1948")
-        driver.find_element_by_id("submit").click()
 
-print test_login2
+
+"""获取验证码"""
+
+#
+# driver.find_element_by_id("smscode").clear()
+# driver.find_element_by_id("smscode").send_keys("1948")
+# driver.find_element_by_id("submit").click()
