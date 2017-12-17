@@ -10,7 +10,7 @@ import unittest, time, re
 """期间遇到了两个问题，第一个：
 selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.
 需要下载geckodriver，后面到https://github.com/mozilla/geckodriver/releases下载对应的版本后放到环境变量下的
-目录中即可解决。
+目录中（python.exe位置那）即可解决。
 后来下载后又出现selenium.common.exceptions.WebDriverException: Message: Unable to find a matching 
 set of capabilities.
 期初以为是selenium与firefox版本不对应，后来更换了两个版本还是不行，折腾了半天发现需要把firefox的安装目录（
