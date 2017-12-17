@@ -7,6 +7,18 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
+"""期间遇到了两个问题，第一个：
+selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.
+需要下载geckodriver，后面到https://github.com/mozilla/geckodriver/releases下载对应的版本后放到环境变量下的
+目录中即可解决。
+后来下载后又出现selenium.common.exceptions.WebDriverException: Message: Unable to find a matching 
+set of capabilities.
+期初以为是selenium与firefox版本不对应，后来更换了两个版本还是不行，折腾了半天发现需要把firefox的安装目录（
+家里电脑不是默认安装路径）添加到环境变量中，最终解决了。累计前后折腾了4小时，大部分时间都花在龟速下载
+geckodriver和错误路径的配置上，真是要命...
+"""
+
+
 """加载cookie"""
 fp=webdriver.FirefoxProfile(r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles')
 driver=webdriver.Firefox(fp)
@@ -28,12 +40,12 @@ driver.maximize_window()
 driver.get("http://www.labi.com/sms?type=1")
 # js='window.open("http://www.labi.com/sms?type=1");'
 # driver.execute_script(js)
-# driver.find_element_by_id("mlog_un").clear()
-# driver.find_element_by_id("mlog_un").send_keys("ftxsb")
-# driver.find_element_by_id("mlog_pwd").clear()
-# driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
+driver.find_element_by_id("mlog_un").clear()
+driver.find_element_by_id("mlog_un").send_keys("ftxsb")
+driver.find_element_by_id("mlog_pwd").clear()
+driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
+driver.find_element_by_id("btnLogin").click()
 # driver.find_element_by_id("mlog_ck").click()
-# driver.find_element_by_xpath("//a[@id='btnLogin']/span").click()
 
 
 
