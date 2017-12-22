@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+import urllib
+from bs4 import BeautifulSoup
+
+import urllib.request
+import re
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -7,59 +13,28 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-
-class UntitledTestCase(unittest.TestCase):
-    def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        # self.base_url = "https://www.katalon.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
-
-    def test_untitled_test_case(self):
-        driver = self.driver
-        driver.get("https://www.labi.com/login?backUrl=%2Fsms%3Ftype%3D1")
-        driver.find_element_by_id("mlog_un").click()
-        driver.find_element_by_id("mlog_un").clear()
-        driver.find_element_by_id("mlog_un").send_keys("ftxsb")
-        driver.find_element_by_id("mlog_pwd").click()
-        driver.find_element_by_id("mlog_pwd").clear()
-        driver.find_element_by_id("mlog_pwd").send_keys("xiaoshoubu")
-        driver.find_element_by_xpath("//a[@id='btnLogin']/span").click()
-        # driver.find_element_by_xpath("//body").click()
-        # driver.find_element_by_id("mlog_ck").click()
-        # driver.find_element_by_id("pp_lw_m").click()
-
-    def is_element_present(self, how, what):
-        try:
-            self.driver.find_element(by=how, value=what)
-        except NoSuchElementException as e:
-            return False
-        return True
-
-    def is_alert_present(self):
-        try:
-            self.driver.switch_to_alert()
-        except NoAlertPresentException as e:
-            return False
-        return True
-
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally:
-            self.accept_next_alert = True
-
-    def tearDown(self):
-        self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
+"""期间遇到了两个问题，第一个：
+selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.
+需要下载geckodriver，后面到https://github.com/mozilla/geckodriver/releases下载对应的版本后放到环境变量下的
+目录中（python.exe位置那）即可解决。
+后来下载后又出现
+selenium.common.exceptions.WebDriverException: Message: Unable to find a matching set of capabilities.
+期初以为是selenium与firefox版本不对应，后来更换了两个版本还是不行，折腾了半天发现需要把firefox的安装目录（
+家里电脑不是默认安装路径）添加到环境变量中，最终解决了。累计前后折腾了4小时，大部分时间都花在龟速下载
+geckodriver和错误路径的配置上，真是要命...
+"""
 
 
-if __name__ == "__main__":
-    unittest.main()
+
+
+"""获取验证码"""
+# res = urllib.urlopen("http://www.baidu.com")
+# print res.read()
+# print "*"*150
+# fp=webdriver.FirefoxProfile(r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles\h35uyvpz.default')
+# url = "http://www.labi.com/sms?type=1"
+# x =webdriver.Firefox(fp)
+# page=x.get(url)
+# soup = BeautifulSoup(page,"html.parser")
+# print soup
+
