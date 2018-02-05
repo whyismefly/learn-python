@@ -61,13 +61,6 @@ def UsePlatform( ):
     else:
         print ("Other System tasks")
 
-
-
-
-
-
-
-
 #datetime时间精确度较差
 start = datetime.datetime.now()
 testfunc()
@@ -78,21 +71,20 @@ print "datetime()", (end-start)
 start = time.time()
 testfunc()
 end = time.time()
-print "time()", (end-start)
+print "time()", (end-start),str(end-start)
 
 #windows常用
 start =time.clock()
 testfunc()
 print(sum)
 end = time.clock()
-print('clock()Running time: %s Seconds'%(end-start))
+print "clock()", (end-start),str(end-start)
 
 #跨平台使用
 start = timeit.default_timer()
 testfunc()
 end = timeit.default_timer()
-print str(end-start)
-
+print "timeit()",(end-start),str(end-start)
 
 #系统检测
 TestPlatform()
