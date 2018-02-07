@@ -38,7 +38,7 @@ while True:
     #     print "%s\r" % i,
     for i in [1,25,30]:
         print "%s\r" % i
-#不加,这个符号则是累计输出，加了是单独输出
+#不加,则是累计输出，加了是单独输出
 """ Always
         remember
         this: % r is
