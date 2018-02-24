@@ -2,10 +2,18 @@
 # encoding:utf-8
 
 import urllib
+import requests
+import bs4
 import sqlite3
 
 #获取网页
-def gethtml(url):
+def gethtmlbyurllib(url):
+    page =urllib.urlopen(url)
+    html=page.read()
+    return html
+
+#获取网页
+def gethtmlbybs4(url):
     page =urllib.urlopen(url)
     html=page.read()
     return html

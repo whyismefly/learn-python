@@ -4,7 +4,7 @@ except ImportError:
     from distutils.core import setup
 
 config={
-    'description':'getstockdata',
+    'description':'get stock data',
     'author': 'WHY',
     'url': 'URL to get it at.',
     'download_url': 'Where to download it.',
