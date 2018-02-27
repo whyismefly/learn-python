@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # encoding:utf-8
 
+
 import urllib
 import requests
 import bs4
@@ -34,10 +35,9 @@ def selectinfomation(html):
     print "hello"
 
 #测试
-#百度股票
-# h = gethtml("https://www.cnblogs.com/snowbook/p/5764549.html")
+
 #东方财富网
-h = gethtml("http://quote.eastmoney.com/stocklist.html")
+h = gethtmlbyurllib("http://quote.eastmoney.com/stocklist.html")
 savehtmlastxt(h,"股票名称编号")
 
 #遍历文件夹并获取特定类型文件
