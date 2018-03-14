@@ -18,8 +18,14 @@ def gethtmlbyurllib(url):
 def gethtmlbybs4(url):
     req=requests.get(url)
     soup=BeautifulSoup(req.content,"lxml")
-    items=soup.find()
-    print soup
+    items=soup.find('a')
+    # print soup
+    # print type(soup.head)
+
+    # print soup.title
+    # print type(soup.title)
+    # print soup.a.name
+    # print soup.a.attrs
 
 # 保存网页
 def savehtmlastxt(html,savename):
