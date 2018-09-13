@@ -10,5 +10,4 @@ from getdata import stock01
 url="http://quote.eastmoney.com/stocklist.html"
 # htmllib = stock01.gethtmlbyurllib(url)
 htmlbs4=stock01.gethtmlbybs4(url)
-
 print htmlbs4
