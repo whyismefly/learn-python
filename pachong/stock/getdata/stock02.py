@@ -27,10 +27,12 @@ print "输出标准网页",'-'*150
 print "获取标题",'-'*150
 
 #尝试获取特定内容
-# print soup.ul.li
-# print soup.ul.li.get_text()
-#  print soup.find_all(re.compile('^li'))
-# print soup.find_all('/li')
+print soup.ul.li
+print soup.ul.li.get_text()
+print soup.find_all(re.compile('^li'))
+print soup.find_all('/li')
+
+
 print "尝试获取特定内容",'-'*180
 
 #获取股票代码和名称
