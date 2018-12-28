@@ -44,8 +44,8 @@ def selectinfomation(html):
 #测试
 
 # #东方财富网
-    # h = gethtmlbyurllib("http://quote.eastmoney.com/stocklist.html")
-    # savehtmlastxt(h,"股票名称编号")
+h = gethtmlbyurllib("http://quote.eastmoney.com/stocklist.html")
+savehtmlastxt(h,"股票名称编号")
 
 #遍历文件夹并获取特定类型文件
 # import os
