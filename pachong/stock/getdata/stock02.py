@@ -52,6 +52,6 @@ def savehtmlastxt(html,savename):
     #中文会出现乱码
     html = open(unicode(str(savename) + ".html","utf-8"), "wb")
     try:
-        html.write(h)
+        html.write()
     finally:
         html.close()

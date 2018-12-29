@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # encoding:utf-8
 
-from nose.tools import *
 import sys
 sys.path.append("E:/GITHUBWORK/learn-python/pachong/stock")
 # sys.path.append("../getdata") 这样解决不了问题
