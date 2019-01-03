@@ -44,6 +44,10 @@ line = """</script>
             <li><a target="_blank" href="http://quote.eastmoney.com/sh201002.html">R014(201002)</a></li>"""
 
 soup=gettestsoup()
-print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')
+for link in soup.find_all('a'):
+    print(link.get('href'))
+    print soup.ul.li.get_text()
+
+# print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')
 # print soup.text
 # print soup.contents

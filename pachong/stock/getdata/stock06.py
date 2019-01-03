@@ -13,6 +13,6 @@ html = """ 2 <html><head><title>The Dormouse's story</title></head>
  9 and they lived at the bottom of a well.</p>
 10 <p class="story">...</p>
 """
-soup = BeautifulSoup(html,"html.parse")
+soup = BeautifulSoup(html,"lxml")
 for link in soup.find_all('a'):
     print(link.get('href'))
