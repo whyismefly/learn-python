@@ -52,14 +52,11 @@ line = """</script>
 
 soup=gettestsoup()
 for link in soup.find_all('a'):
-<<<<<<< HEAD
     print link.get_text(),
     print(link.get('href'))
 
-=======
-    print(link.get('href'))
-    print soup.ul.li.get_text()
->>>>>>> 0703c8d3131241f6455dbdf276ae37b2b6f98eaf
+# print(link.get('href'))
+# print soup.ul.li.get_text()
 
 # print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')
 # print soup.text

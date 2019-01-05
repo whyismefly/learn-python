@@ -14,7 +14,6 @@ html = """ 2 <html><head><title>The Dormouse's story</title></head>
  9 and they lived at the bottom of a well.</p>
 10 <p class="story">...</p>
 """
-<<<<<<< HEAD
 
 
 class Info():
@@ -28,8 +27,6 @@ class Info():
 
 soup = BeautifulSoup(html, "lxml")
 x=Info.getstockinfo(soup)
-=======
 soup = BeautifulSoup(html,"lxml")
 for link in soup.find_all('a'):
     print(link.get('href'))
->>>>>>> 0703c8d3131241f6455dbdf276ae37b2b6f98eaf
