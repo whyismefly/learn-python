@@ -2,7 +2,6 @@
 # encoding:utf-8
 import bs4
 from bs4 import BeautifulSoup
-import requests
 
 html = """ 2 <html><head><title>The Dormouse's story</title></head>
  3 <body>
@@ -16,17 +15,19 @@ html = """ 2 <html><head><title>The Dormouse's story</title></head>
 """
 
 
-class Info():
+class Info:
     def info(self):
         return "testInfo"
 
-    def getstockinfo(soup):
+    def getstockinfo(self,soup):
         for link in soup.find_all('a'):
             return link.get_text(),(link.get('href'))
             print link.get_text(),(link.get('href'))
-
+asdsad=12321
 soup = BeautifulSoup(html, "lxml")
-x=Info.getstockinfo(soup)
-soup = BeautifulSoup(html,"lxml")
-for link in soup.find_all('a'):
-    print(link.get('href'))
+x=Info()
+print x.getstockinfo(soup)
+
+# soup = BeautifulSoup(html,"lxml")
+# for link in soup.find_all('a'):
+#     print(link.get('href'))
