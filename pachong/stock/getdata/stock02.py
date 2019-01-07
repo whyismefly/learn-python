@@ -33,8 +33,8 @@ print "获取标题",'-'*150
 # print soup.find_all(re.compile('^li'))
 # print soup.find_all('/li')
 # print soup.select('.quotebody ul li')
-
-
+# print soup.select('.quotebody ul li').get_text()
+# #AttributeError: 'list' object has no attribute 'get_text'返回的是list，得换成soup类型的才可以使用'get_text'
 
 print "尝试获取特定内容",'-'*180
 
