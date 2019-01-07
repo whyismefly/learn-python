@@ -21,7 +21,6 @@ def gethtmlbybs4(url):
     items=soup.find('a')
     # print soup
     # print type(soup.head)
-
     # print soup.title
     # print type(soup.title)
     # print soup.a.name
