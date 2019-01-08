@@ -23,11 +23,11 @@ class Info:
         for link in soup.find_all('a'):
             return link.get_text(),(link.get('href'))
             print link.get_text(),(link.get('href'))
-asdsad=12321
+
 soup = BeautifulSoup(html, "lxml")
 x=Info()
 print x.getstockinfo(soup)
 
-# soup = BeautifulSoup(html,"lxml")
-# for link in soup.find_all('a'):
-#     print(link.get('href'))
+soup = BeautifulSoup(html,"lxml")
+for link in soup.find_all('a'):
+    print(link.get('href'))
