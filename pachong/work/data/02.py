@@ -76,7 +76,6 @@ html=getsoup(url).contents
 name = "汇总"
 savehtml(html,name)
 
-
 # soup=gettestsoup(html)
 # for link in soup.find_all('a'):
 #     print link.get_text(),
