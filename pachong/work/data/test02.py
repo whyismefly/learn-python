@@ -19,14 +19,14 @@ def savehtml(html,savename):
     #中文会出现乱码
     html = open(unicode(str(savename) + ".html","utf-8"), "wb")
     try:
-        html.write()
+        html.write(h)
     finally:
         html.close()
 
 def savehtmlastxt(html,savename):
     html = open(unicode(str(savename) + ".txt","utf-8"), "wb")
     try:
-        html.write()
+        html.write(html)
     finally:
         html.close()
 
@@ -37,6 +37,7 @@ def gettestsoup():
         soup = BeautifulSoup(req.content, "lxml")
         # print soup
         return soup
+
     except (Exception), e:
         print e
 
@@ -72,15 +73,14 @@ textline = """</script>
 
 url = "http://quote.eastmoney.com/stocklist.html"
 # html=gethtmlbyurllib(url)
-html=getsoup(url).contents
+h=getsoup(url).contents
 name = "汇总"
-savehtml(html,name)
+savehtml(h,name)
 
 # soup=gettestsoup(html)
 # for link in soup.find_all('a'):
 #     print link.get_text(),
 #     print(link.get('href'))
-
 # print(link.get('href'))
 # print soup.ul.li.get_text()
 # print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')

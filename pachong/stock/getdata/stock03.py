@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 sys.path.append("E:/GITHUBWORK/learn-python/pachong/stock")
+import urllib
 
 def gettestsoup():
     try:
@@ -49,14 +50,25 @@ line = """</script>
 
             <li><a target="_blank" href="http://quote.eastmoney.com/sh201002.html">R014(201002)</a></li>"""
 
-soup=gettestsoup()
-for link in soup.find_all('a'):
-    print link.get_text(),
-    print(link.get('href'))
+# soup=gettestsoup()
+stockurl="http://quote.eastmoney.com/sz002750.html"#目标股票地址
+page =urllib.urlopen(stockurl)#用urllib获取网页
+html1=page.read()#获取的网页数据保存到html1
+html2 = open(unicode(str("123") + ".html", "utf-8"), "wb")#创建123的文本
+html2.write(html1)#把html1内容写入html2
+html2.close()
+soup=getsoup(stockurl)#返回soup类型的数据，方便查询内容，因为我找的教程都是用BS提取的
+x=soup.select(".cwzb")
+print str(x)
+print str(soup.select(".cwzb")).decode('unicode_escape')
+
+
+# for link in soup.find_all('a'):
+#     print link.get_text(),
+#     print(link.get('href'))
 
 # print(link.get('href'))
 # print soup.ul.li.get_text()
-
 # print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')
 # print soup.text
 # print soup.contents
