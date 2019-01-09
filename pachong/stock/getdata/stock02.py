@@ -14,7 +14,7 @@ soup=BeautifulSoup(req.content,"lxml")
 
 #输出标准网页
 # items=soup.find('a')
-x=soup.prettify()
+print soup.prettify()
 # print soup
 print "输出标准网页",'-'*150
 

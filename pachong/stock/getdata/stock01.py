@@ -4,7 +4,6 @@
 
 import urllib
 import requests
-import bs4
 from bs4 import BeautifulSoup
 import sqlite3
 

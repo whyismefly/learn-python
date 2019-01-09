@@ -4,9 +4,31 @@
 from abc import ABCMeta, abstractmethod
 import re
 import requests
+import urllib
 from bs4 import BeautifulSoup
 import sys
 sys.path.append("E:/GITHUBWORK/learn-python/pachong/stock")
+
+def gethtmlbyurllib(url):
+    page =urllib.urlopen(url)
+    html=page.read()
+    return html
+
+def savehtml(html,savename):
+    # html = open(str(savename)+".html", "wb")
+    #中文会出现乱码
+    html = open(unicode(str(savename) + ".html","utf-8"), "wb")
+    try:
+        html.write()
+    finally:
+        html.close()
+
+def savehtmlastxt(html,savename):
+    html = open(unicode(str(savename) + ".txt","utf-8"), "wb")
+    try:
+        html.write()
+    finally:
+        html.close()
 
 def gettestsoup():
     try:
@@ -32,8 +54,7 @@ def getinfo(soup):
         print link.get_text(),
         print(link.get('href'))
 
-
-line = """</script>
+textline = """</script>
     <div class="qox">
         <div class="space3">
         </div>
@@ -49,14 +70,20 @@ line = """</script>
 
             <li><a target="_blank" href="http://quote.eastmoney.com/sh201002.html">R014(201002)</a></li>"""
 
-soup=gettestsoup()
-for link in soup.find_all('a'):
-    print link.get_text(),
-    print(link.get('href'))
+url = "http://quote.eastmoney.com/stocklist.html"
+# html=gethtmlbyurllib(url)
+html=getsoup(url).contents
+name = "汇总"
+savehtml(html,name)
+
+
+# soup=gettestsoup(html)
+# for link in soup.find_all('a'):
+#     print link.get_text(),
+#     print(link.get('href'))
 
 # print(link.get('href'))
 # print soup.ul.li.get_text()
-
 # print soup.select_one('html>body>div.qox>div.quotebody>div#quotesearch')
 # print soup.text
 # print soup.contents
