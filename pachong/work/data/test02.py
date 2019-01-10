@@ -8,6 +8,7 @@ import urllib
 from bs4 import BeautifulSoup
 import sys
 sys.path.append("E:/GITHUBWORK/learn-python/pachong/stock")
+import pandas
 
 def gethtmlbyurllib(url):
     page =urllib.urlopen(url)
@@ -76,6 +77,7 @@ url = "http://quote.eastmoney.com/stocklist.html"
 h=getsoup(url).contents
 name = "汇总"
 savehtml(h,name)
+pandas.read_html()
 
 # soup=gettestsoup(html)
 # for link in soup.find_all('a'):

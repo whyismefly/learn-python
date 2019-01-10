@@ -17,8 +17,7 @@ def save_html():
     return r_page
 #修改文件,将图片路径改为本地的路径
 def update_file(old,new):
-    with open('page.html', encoding='utf-8') as f, open('page_bak.html', 'w',
-                                                   encoding='utf-8') as fw:  # 打开两个文件，原始文件用来读，另一个文件将修改的内容写入
+    with open('page.html', encoding='utf-8') as f, open('page_bak.html', 'w',encoding='utf-8') as fw:  # 打开两个文件，原始文件用来读，另一个文件将修改的内容写入
         for line in f:  # 遍历每行，取出来的是字符串，因此可以用replace 方法替换
             new_line = line.replace(old, new)  # 逐行替换
             fw.write(new_line)  # 写入新文件
