@@ -59,9 +59,12 @@ html2.write(html1)#把html1内容写入html2
 html2.close()
 soup=getsoup(stockurl)#返回soup类型的数据，方便查询内容，因为我找的教程都是用BS提取的
 x=soup.select(".cwzb")
-print str(x)
-print str(soup.select(".cwzb")).decode('unicode_escape')
-
+#方法1
+# print str(x)
+# print str(soup.select(".cwzb")).decode('unicode_escape')
+#方法2 其实不替换也不影响
+y = str(x).replace('u\'','\'')
+print y.decode("unicode-escape")
 
 # for link in soup.find_all('a'):
 #     print link.get_text(),
