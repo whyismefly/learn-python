@@ -8,8 +8,10 @@ from bs4 import BeautifulSoup
 #获取百度首页新闻
 url="http://www.baidu.com"
 req=requests.get(url)
-soup=BeautifulSoup(req.content,"lxml").prettify()
-print soup
+print req.cookies
+print type(req.cookies)
+# soup=BeautifulSoup(req.content,"lxml").prettify()
+# print soup
 
 # LOGIN_URL = 'http://www.baidu.com'  #请求的URL地址
 # DATA = {"username":'accountID',"passwd":'passwd'}   #登录系统的账号密码,也是我们请求数据

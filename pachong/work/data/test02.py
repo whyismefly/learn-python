@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # encoding:utf-8
 
-from abc import ABCMeta, abstractmethod
-import re
 import requests
 import urllib
 from bs4 import BeautifulSoup
@@ -14,7 +12,6 @@ def gethtmlbyurllib(url):
     page =urllib.urlopen(url)
     html=page.read()
     return html
-
 def savehtml(html,savename):
     # html = open(str(savename)+".html", "wb")
     #中文会出现乱码
@@ -23,14 +20,12 @@ def savehtml(html,savename):
         html.write(h)
     finally:
         html.close()
-
 def savehtmlastxt(html,savename):
     html = open(unicode(str(savename) + ".txt","utf-8"), "wb")
     try:
         html.write(html)
     finally:
         html.close()
-
 def gettestsoup():
     try:
         url = "http://quote.eastmoney.com/stocklist.html"
@@ -38,10 +33,8 @@ def gettestsoup():
         soup = BeautifulSoup(req.content, "lxml")
         # print soup
         return soup
-
     except (Exception), e:
         print e
-
 def getsoup(url):
     try:
         req = requests.get(url)
@@ -50,7 +43,6 @@ def getsoup(url):
         return soup
     except (Exception), e:
         print e
-
 def getinfo(soup):
     for link in soup.find_all('a'):
         print link.get_text(),
