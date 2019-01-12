@@ -3,6 +3,7 @@
 
 import requests
 from bs4 import BeautifulSoup
+from lxml import etree
 
 
 #获取百度首页新闻
@@ -21,3 +22,36 @@ print type(req.cookies)
 #            }
 # RES = requests.post(LOGIN_URL,data=DATA,headers=HEADERS)  #模拟登陆操作
 # print (RES.text) #打印返回的文本信息
+
+
+# 这个是网站在登录的时候验证密码的界面，一般不是登录的界面，需要抓包获取到
+post_url = "https://pos.XXXX.com/j_security_check"
+username = input("请输入登录账号：")
+password = input("请输入登录密码：")
+session = requests.session()
+
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0",
+           "Referer": post_url,
+           "X-Requested-With": "XMLHttpRequest"
+           }
+# 表单数据
+data = {
+    "j_username": username,
+    "j_password": password
+}
+try:
+    login_page = session.post(post_url, data=data, headers=headers)
+    if "loginerror" in login_page.text:
+        print("登录失败，错误的手机号码或密码！")
+    if "</span>首页" in login_page.text:
+        print("欢迎您'%s'，成功登陆POS管理系统！" % username)
+except Exception as e:
+    print(e)
+
+# 需要登录后才能访问的页面网址
+url = "https://pos.XXXXX.com/item/itemlist.html"
+item_list = session.post(url, headers=headers)
+html = etree.HTML(item_list.text)
+Total_list = html.xpath('//span[@class="pagebanner"]/text()')
+# 可以将网页保存到本地，便于分析
+with open("test.html", "w", encoding="utf-8")as f:
