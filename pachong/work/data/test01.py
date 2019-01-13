@@ -8,11 +8,17 @@ from lxml import etree
 
 #获取百度首页新闻
 url="http://www.baidu.com"
+LOGIN_URL="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F&sms=5"
 req=requests.get(url)
 print req.cookies
 print type(req.cookies)
+
+
+
 # soup=BeautifulSoup(req.content,"lxml").prettify()
 # print soup
+
+
 
 # LOGIN_URL = 'http://www.baidu.com'  #请求的URL地址
 # DATA = {"username":'accountID',"passwd":'passwd'}   #登录系统的账号密码,也是我们请求数据
@@ -30,10 +36,7 @@ username = input("请输入登录账号：")
 password = input("请输入登录密码：")
 session = requests.session()
 
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0",
-           "Referer": post_url,
-           "X-Requested-With": "XMLHttpRequest"
-           }
+
 # 表单数据
 data = {
     "j_username": username,
@@ -53,5 +56,9 @@ url = "https://pos.XXXXX.com/item/itemlist.html"
 item_list = session.post(url, headers=headers)
 html = etree.HTML(item_list.text)
 Total_list = html.xpath('//span[@class="pagebanner"]/text()')
-# 可以将网页保存到本地，便于分析
-with open("test.html", "w", encoding="utf-8")as f:
+# # 可以将网页保存到本地，便于分析
+# with open("test.html", "w", encoding="utf-8")as f:
+
+
+
+<
