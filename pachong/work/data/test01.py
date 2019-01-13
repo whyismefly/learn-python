@@ -59,6 +59,23 @@ Total_list = html.xpath('//span[@class="pagebanner"]/text()')
 # # 可以将网页保存到本地，便于分析
 # with open("test.html", "w", encoding="utf-8")as f:
 
+"""
+BDUSS
+名称
+BDUSS
+内容
+pyaVhZbE0yNDFzRmV1TlhnWTBVWWF2SVczcE0zd2hFVVNyY2NHeDE3T042bUpjQVFBQUFBJCQAAAAAAAAAAAEAAAD8SIsHd2h5aXNtZWZseQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI1dO1yNXTtcOG
+域名
+.baidu.com
+路径
+/
+为何发送
+各种连接
+脚本可访问
+否（仅 Http）
+创建时间
+2019年1月13日星期日 下午11:47:25
+到期时间
+2027年4月1日星期四 下午11:47:25
+"""
 
-
-<
