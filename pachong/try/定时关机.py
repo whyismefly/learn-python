@@ -3,9 +3,9 @@
 """参考https://pypi.org/project/schedule/
 python提供标准库sched也可以用，没看"""
 
-"""多进程参考https://www.cnblogs.com/znicy/p/6279930.html
+"""多线程参考https://www.cnblogs.com/znicy/p/6279930.html
 http://www.cnblogs.com/math98/p/8980916.html
-multiprocessing这个复杂一些，https://www.cnblogs.com/kaituorensheng/p/4445418.html"""
+多进程multiprocessing这个复杂一些，https://www.cnblogs.com/kaituorensheng/p/4445418.html"""
 
 
 import schedule,os,time,datetime,sys,multiprocessing
@@ -58,10 +58,18 @@ def my_list():
 
 
 if __name__ == "__main__":
-    p1 = multiprocessing.Process(target = my_list(), args = (2,))
-    p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
-    p1.start()
-    p2.start()
+    # p1 = multiprocessing.Process(target = my_list(), args = (2,))
+    # p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
+    # p1.start()
+    # p2.start()
+    #进程只能运行args其那面的那个...
+    processes = list()
+    for i in range(5):
+        p = multiprocessing.Process(target=my_list, args=('test',))
+        p = multiprocessing.Process(target=my_list, args=('test',))
+        print 'Process will start.'
+        p.start()
+        processes.append(p)
 
     print "OK"
 
