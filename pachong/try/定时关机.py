@@ -4,6 +4,7 @@
 python提供标准库sched也可以用，没看"""
 
 """多线程参考https://www.cnblogs.com/znicy/p/6279930.html
+http://www.runoob.com/python/python-multithreading.html
 http://www.cnblogs.com/math98/p/8980916.html
 多进程multiprocessing这个复杂一些，https://www.cnblogs.com/kaituorensheng/p/4445418.html"""
 
