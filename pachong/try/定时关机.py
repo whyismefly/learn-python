@@ -58,12 +58,16 @@ def my_list():
 
 if __name__ == "__main__":
     processes = list()
-    for i in range(2):
+    for p in range(2):
         p = multiprocessing.Process(target=my_list)
-        # p = multiprocessing.Process(target=jobwarn)
+        p = multiprocessing.Process(target=job1_goon)
         p.start()
         processes.append(p)
-    print "OK" 
+    print "OK"
+    for p in processes:
+        p.join()
+        print 'Process end.'
+
     """
     p = multiprocessing.Process(target=my_list, args=('test',)p1 = multiprocessing.Process(target = my_list(), args = (2,))
     p = multiprocessing.Process(target=my_list, args=('test',)p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
