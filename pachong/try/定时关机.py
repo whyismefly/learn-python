@@ -56,21 +56,25 @@ def my_list():
         schedule.run_pending()
         time.sleep(1)
 
-
-
 if __name__ == "__main__":
-    # p1 = multiprocessing.Process(target = my_list(), args = (2,))
-    # p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
-    # p1.start()
-    # p2.start()
-    #进程只能运行args其那面的那个...
     processes = list()
-    for i in range(5):
-        p = multiprocessing.Process(target=my_list, args=('test',))
-        p = multiprocessing.Process(target=my_list, args=('test',))
-        print 'Process will start.'
+    for i in range(2):
+        p = multiprocessing.Process(target=my_list)
+        # p = multiprocessing.Process(target=jobwarn)
         p.start()
         processes.append(p)
-
-    print "OK"
-
+    print "OK" 
+    """
+    p = multiprocessing.Process(target=my_list, args=('test',)p1 = multiprocessing.Process(target = my_list(), args = (2,))
+    p = multiprocessing.Process(target=my_list, args=('test',)p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
+    p2.start()
+    p1.start()   
+    #进程只能运行args其那面的那个...
+    processes = list()
+    p = multiprocessing.Process(target=jobwarn)
+    p = multiprocessing.Process(target=my_list)
+    print 'Process will start.'
+    p.start()
+    processes.append(p)
+    #进程只能运行args其那面的那个...仍不能并发执行    
+    """
