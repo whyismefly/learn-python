@@ -54,19 +54,19 @@ def my_list():
     print "222222222222222222222222222"
     while True:
         schedule.run_pending()
-        time.sleep(1)
+        # time.sleep(1)
 
 if __name__ == "__main__":
     processes = list()
     for p in range(2):
         p = multiprocessing.Process(target=my_list)
-        p = multiprocessing.Process(target=job1_goon)
+        p = multiprocessing.Process(target=jobwarn)
         p.start()
         processes.append(p)
     print "OK"
     for p in processes:
         p.join()
-        print 'Process end.'
+        print time.now(),'Process end.'
 
     """
     p = multiprocessing.Process(target=my_list, args=('test',)p1 = multiprocessing.Process(target = my_list(), args = (2,))

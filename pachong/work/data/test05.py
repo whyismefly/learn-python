@@ -1,6 +1,6 @@
 # !/usr/bin/python
 # -*- coding: UTF-8 -*-
-import os
+import os,schedule,time
 def job1_goon():
     print "11111111111111111111111111111111"
     while True:
@@ -11,4 +11,8 @@ def job1_goon():
         else:
             print "as plan"
 
-job1_goon()
+
+schedule.every(5).seconds.do(job1_goon)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
