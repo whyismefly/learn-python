@@ -64,9 +64,9 @@ if __name__ == "__main__":
         p.start()
         processes.append(p)
     print "OK"
-    for p in processes:
-        p.join()
-        print time.now(),'Process end.'
+    # for p in processes:
+    #     p.join()
+    #     print time.now(),'Process end.'
 
     """
     p = multiprocessing.Process(target=my_list, args=('test',)p1 = multiprocessing.Process(target = my_list(), args = (2,))
