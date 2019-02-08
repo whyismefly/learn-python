@@ -8,8 +8,8 @@ http://www.runoob.com/python/python-multithreading.html
 http://www.cnblogs.com/math98/p/8980916.html
 多进程multiprocessing这个复杂一些，https://www.cnblogs.com/kaituorensheng/p/4445418.html"""
 
-
-import schedule,os,time,datetime,sys,multiprocessing
+# import multiprocessing
+import schedule,os,time,datetime,sys,threading
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -50,25 +50,23 @@ def my_list():
     schedule.every().day.at("02:15").do(job1s)
     schedule.every().day.at("02:30").do(job1s)
     schedule.every().day.at("02:45").do(job1s)
-    # schedule.every(5).seconds.do(jobwarn)
+    schedule.every(5).seconds.do(jobwarn)
     print "222222222222222222222222222"
     while True:
         schedule.run_pending()
-        # time.sleep(1)
+        time.sleep(1)
 
 if __name__ == "__main__":
-    processes = list()
-    for p in range(2):
-        p = multiprocessing.Process(target=my_list)
-        p = multiprocessing.Process(target=jobwarn)
-        p.start()
-        processes.append(p)
-    print "OK"
-    # for p in processes:
-    #     p.join()
-    #     print time.now(),'Process end.'
+    threads = []
+    threads.append(threading.Thread(target=jobwarn))
+    threads.append(threading.Thread(target=my_list))
+    for t in threads:
+        t.start()
+
 
     """
+    #1111111111
+if __name__ == "__main__":
     p = multiprocessing.Process(target=my_list, args=('test',)p1 = multiprocessing.Process(target = my_list(), args = (2,))
     p = multiprocessing.Process(target=my_list, args=('test',)p2 = multiprocessing.Process(target = job1_goon(), args = (3,))
     p2.start()
@@ -82,3 +80,23 @@ if __name__ == "__main__":
     processes.append(p)
     #进程只能运行args其那面的那个...仍不能并发执行    
     """
+
+"""
+#222222222222222222
+if __name__ == "__main__":
+    processes = list()
+    for p in range(2):
+        p = multiprocessing.Process(target=jobwarn)
+        p = multiprocessing.Process(target=my_list)
+        p.start()
+        processes.append(p)
+    print "OK"
+    for p in processes:
+        p.join()
+        print datetime.datetime.now(),'Process end.'
+    #进程会两个都运行结束...如果把jobwarn和my_list的执行顺序改变的话也会影响到执行结果，只能一直运行第一个...仍不能并发执行。
+总的来说又多了一个失败教训
+怀疑是创建进程Process或者线程threads不应该在main内
+if __name__ == "__main__":
+"""
+
