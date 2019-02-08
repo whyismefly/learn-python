@@ -14,7 +14,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 def jobwarn():
-    t=time.now = datetime.datetime.now()
+    t = datetime.datetime.now()
     print t,"注意时间，早点休息。"
 def job1s():
     print "1秒后关机"
