@@ -15,25 +15,25 @@ sys.setdefaultencoding('utf-8')
 
 def jobwarn():
     t = datetime.datetime.now()
-    print t,"注意时间，早点休息。"
+    print t,"time warning."
 def job1s():
-    print "1秒后关机"
+    print "1 second to shutdown"
     os.system("shutdown -s -t 1")
 def job5s():
-        print "5s后关机"
+        print "5 seconds to shutdown"
         os.system("shutdown -s -t 5")
 def job60s():
-    print "60s后关机"
+    print "60 seconds to shutdown"
     os.system("shutdown -s -t 60")
 def job120s():
-    print "120s后关机"
+    print "120 seconds to shutdown"
     os.system("shutdown -s -t 120")
 def job1_goon():
-    print "11111111111111111111111111111111"
-    while True:
-        info=raw_input("more:")
+    FLAG=1
+    while FLAG:
+        info=raw_input("more?")
         if info == "s":
-            print info, "再续一会"
+            print info, "more time..."
             os.system("shutdown -a")
         else:
             print "as plan"
@@ -51,14 +51,13 @@ def my_list():
     schedule.every().day.at("02:30").do(job1s)
     schedule.every().day.at("02:45").do(job1s)
     schedule.every(5).seconds.do(jobwarn)
-    print "222222222222222222222222222"
     while True:
         schedule.run_pending()
         time.sleep(1)
 
 if __name__ == "__main__":
     threads = []
-    threads.append(threading.Thread(target=jobwarn))
+    threads.append(threading.Thread(target=job1_goon))
     threads.append(threading.Thread(target=my_list))
     for t in threads:
         t.start()
