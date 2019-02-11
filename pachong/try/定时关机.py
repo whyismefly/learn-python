@@ -50,7 +50,7 @@ def my_list():
     schedule.every().day.at("02:15").do(job1s)
     schedule.every().day.at("02:30").do(job1s)
     schedule.every().day.at("02:45").do(job1s)
-    schedule.every(5).seconds.do(jobwarn)
+    # schedule.every(5).seconds.do(jobwarn)
     while True:
         schedule.run_pending()
         time.sleep(1)
