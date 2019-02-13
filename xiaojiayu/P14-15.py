@@ -16,3 +16,7 @@ print type(temp)
 temp=("fwhruifhei",2123123,"fhoierqwhfrei,","fhuirhfgrfgggbmkkh")
 temp=temp[:2]+("jfowhjf",)+temp[2:]
 print temp
+
+str1='fjeriop gjgp mrhp[krthrgt'
+print (str1.capitalize())
+#尝试一下str的各种方法吧
