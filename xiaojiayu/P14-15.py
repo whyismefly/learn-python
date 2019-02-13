@@ -20,3 +20,5 @@ print temp
 str1='fjeriop gjgp mrhp[krthrgt'
 print (str1.capitalize())
 #尝试一下str的各种方法吧
+print 111111111111111111111111
+print str1.strip()
