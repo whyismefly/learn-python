@@ -29,9 +29,9 @@ def job120s():
     print "120 seconds to shutdown"
     os.system("shutdown -s -t 120")
 def job1_goon():
-    FLAG=1
+    FLAG = 1
     while FLAG:
-        info=raw_input("more?")
+        info = raw_input("more?")
         if info == "s":
             print info, "more time..."
             os.system("shutdown -a")
@@ -61,7 +61,6 @@ if __name__ == "__main__":
     threads.append(threading.Thread(target=my_list))
     for t in threads:
         t.start()
-
 
     """
     #1111111111
