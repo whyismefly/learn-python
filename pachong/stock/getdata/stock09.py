@@ -1,9 +1,9 @@
-#!usr/bin/python
+#!/usr/bin/python3
 # encoding:utf-8
 
 #导入需要使用到的模块
+import urllib
 import urllib.request
-import urllib.urlopen
 import re
 import pandas as pd
 import pymysql
@@ -36,4 +36,4 @@ for code in CodeList:
     print('正在获取股票%s数据'%code)
     url = 'http://quotes.money.163.com/service/chddata.html?code=0'+code+\
         '&end=20161231&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP'
-    urllib.request.urlretrieve(url, filepath+code+'.csv')
+    urllib.request.urlretrieve(url, code+'.csv')
