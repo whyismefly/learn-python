@@ -10,6 +10,8 @@
 #https://jingyan.baidu.com/article/48206aeafdcf2a216ad6b316.html
 
 #3安装PIP，配置pip环境变量再用匹配安装其他包...
+要使用以下指令安装PIP成功前提是必须安装setuptools和 wheel
+https://pip.pypa.io/en/stable/installing/ 
 #https://www.kancloud.cn/kancloud/learn-python-hard-way/49924
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
