@@ -1,70 +1,43 @@
 #!/usr/bin/python
 #encoding:utf-8
 
-# from nose.tools import *
-# from ex47.game import Room
-#
-#
-# def test_room() :
-#     gold=Room("goldroom",
-#               """golds in.
-#               a door north""")
-#     assert_equal(gold.name,"goldroom")
-#     assert_equal(gold.paths,[])
-#
-# def test_room_paths():
-#     center=Room("center","test room in the center")
-#     north=Room("North","test room in north")
-#     south=Room("South","test room in south")
-#
-#     center.add_paths(['north':north,'south':south])
-#     assert_equal(center.go("north"),north)
-#     assert_equal(center.go('south'),south)
-#
-# def test_map():
-#     start=Room("start","go west and down a hole")
-#     west=Room("trees","trees here,go east")
-#     down=Room("dungeon","dark here,go up")
-#
-#     start.add_paths(['west': west, 'down': down])
-#     west.add_paths(['east':start])
-#     down.add_paths(['up': start])
-#
-#     assert_equal(start.go('west'),west)
-#     assert_equal(start.go('west').go('east'),start)
-#     assert_equal(start.go('down').go('up'),start)
-
 from nose.tools import *
-
 import nose
-#import sys
-# sys.path.append("../ex47")
-#使用sys.path.append("../ex47")这句话在powershell中会导致No module named game，需要在pycharm中手动添加
+import sys
+# sys.path.append("..\\")
+sys.path.append("../")
+#上面两种写法都行，都是返回当前目录的上一层目录
+#使用sys.path.append("../ex47")这句话在powershell中会导致No module named game，因为位置多跑了一层，需要在pycharm中手动添加
 from ex47.game import Room
 
-
 def test_room():
-    gold = Room("GoldRoom", """This room has gold in it you can grab. There's a
-            door to the north.""")
+    gold = Room("GoldRoom",
+                """This room has gold in it you can grab. There's a
+                door to the north.""")
     assert_equal(gold.name, "GoldRoom")
     assert_equal(gold.paths, {})
+
 def test_room_paths():
     center = Room("Center", "Test room in the center.")
     north = Room("North", "Test room in the north.")
     south = Room("South", "Test room in the south.")
+
     center.add_paths({'north': north, 'south': south})
     assert_equal(center.go('north'), north)
     assert_equal(center.go('south'), south)
+
 def test_map():
     start = Room("Start", "You can go west and down a hole.")
     west = Room("Trees", "There are trees here, you can go east.")
     down = Room("Dungeon", "It's dark down here, you can go up.")
+
     start.add_paths({'west': west, 'down': down})
     west.add_paths({'east': start})
     down.add_paths({'up': start})
+
     assert_equal(start.go('west'), west)
     assert_equal(start.go('west').go('east'), start)
     assert_equal(start.go('down').go('up'), start)
-
-if __name__ == "__main__":
-    nose.runmodule()
+#
+# if __name__ == "__main__":
+#     nose.runmodule()
