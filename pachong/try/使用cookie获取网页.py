@@ -24,13 +24,22 @@ cookie={"BDUSS":
 
 #内网登录
 
-url1="http://134.64.116.90:8081/?mscg-ip=134.64.50.241"
-cookie1={"PHPSESSID":
-        "7d52ff757b92"
-}
-req1=requests.get(url1,cookies=cookie1)
-soup1=BeautifulSoup(req1.content,"lxml")
-print soup1
-html1 = open( "test.html", "wb")
-html1.write(soup1.encode("utf-8"))
-html1.close()
+# url1="http://134.64.116.90:8081/?mscg-ip=134.64.50.241"
+# cookie1={"PHPSESSID":
+#         "7d52ff757b92"
+# }
+# req1=requests.get(url1,cookies=cookie1)
+# soup1=BeautifulSoup(req1.content,"lxml")
+# print soup1
+# html1 = open( "test.html", "wb")
+# html1.write(soup1.encode("utf-8"))
+# html1.close()
+
+
+url2="https://www.51test.net/show/9198407.html"
+req2=requests.get(url2)
+soup2=BeautifulSoup(req2.content,"lxml")
+# print soup2
+text = open( "baogao.txt", "wb")
+text.write(soup2.text.encode("utf-8"))
+text.close()
