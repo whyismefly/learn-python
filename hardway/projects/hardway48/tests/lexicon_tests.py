@@ -1,10 +1,14 @@
 #!/usr/bin/python
 # encoding:utf-8
 from nose.tools import *
-# import sys
-# sys.path.append("../ex48")
-#注意处理方法，用shell时得换回来，不能用sys添加的方式
+import nose
+import sys
+# sys.path.append("..\\")
+sys.path.append("../ex48")
+#注意路径
 from ex48 import lexicon
+#在家里win10的64位上正常，单位win7的32位powershell,折腾半天查找到原因是没有把hardway48下面的__init__.py删掉造成的，
+# 删掉后powershell瞬间正常...注意基础，出问题了要多尝试，多角度看问题，注意对比...到是查清了__init__.py的用法。
 
 def text_directions():
     assert_equal(lexicon.scan("north"), [('direction', 'north')])
