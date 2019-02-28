@@ -1,14 +1,23 @@
 #!/usr/bin/python
 # encoding:utf-8
-from nose.tools import *
+
 import nose
+from nose.tools import *
 import sys
 sys.path.append("..\\")
-# sys.path.append("../ex48")
-#注意路径
 from ex48 import lexicon
-#在家里win10的64位上正常，单位win7的32位powershell,折腾半天查找到原因是没有把hardway48下面的__init__.py删掉造成的，
-# 删掉后powershell瞬间正常...注意基础，出问题了要多尝试，多角度看问题，注意对比...到是查清了__init__.py的用法。
+from ex48 import parser
+from ex49 import parser1
+
+
+def text_peek():
+    word_list=["fhiwhfpoi","bnrgbn","fjeruiowgfher"]
+    result=parser.peek(word_list)
+    assert_raises(result,123)
+    assert_equal(result,"fhiwhfpoi")
+    assert_equal(result,"fjeruiowgfher")
+
+#这里需要看看nose的文档，加深了解测试模块
 
 def test_directions():
     assert_equal(lexicon.scan("north"), [('direction', 'north')])
