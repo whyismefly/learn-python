@@ -25,8 +25,15 @@ import lxml
 #         print i
 # print get_all_stock_id()
 
-today=ts.get_today_all()
-print today
+# today=ts.get_today_all()#当天所有股票
+# print today
+# today.to_csv("..\\data\\test01.csv",encoding='utf_8_sig')
 
 # df = ts.get_index()
 # print(df)
+
+# data=ts.get_tick_data('300032','2019-02-01')
+# print data
+
+data1=ts.get_today_ticks('300032')
+print(data1)
