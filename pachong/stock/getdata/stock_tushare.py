@@ -10,8 +10,9 @@ import lxml
 # print df.head(10)
 # print type(df)
 
-# stock_info=ts.get_stock_basics()
-# print stock_info
+stock_info=ts.get_stock_basics()
+print stock_info
+stock_info.to_csv('1.csv',index=False, header=False)
 # list=list(stock_info)
 # print list
 # text = open( "stock.txt", "wb")
@@ -23,5 +24,8 @@ import lxml
 #         print i
 # print get_all_stock_id()
 
-today=ts.get_today_all()
-print today
+# today=ts.get_today_all()
+# print today
+
+# df = ts.get_index()
+# print(df)
