@@ -2,8 +2,9 @@
 # encoding:utf-8
 
 import tushare as ts
-import pandas
+import pandas as pd
 import lxml
+from sqlalchemy import create_engine
 
 # print ts.get_hist_data('600848') #一次性获取全部日k线数据
 # df = ts.get_hist_data('000001',start='2017-01-01',end='2019-02-28')
@@ -35,5 +36,13 @@ import lxml
 # data=ts.get_tick_data('300032','2019-02-01')
 # print data
 
-data1=ts.get_today_ticks('300032')
-print(data1)
+# data1=ts.get_today_ticks('300032')
+# print(data1)
+
+df = ts.get_hist_data('600300').iloc[:,:4]
+engine = create_engine('mysql://root:root@127.0.0.1/stock?charset=utf8')
+df.to_sql('tick_data600300',engine,if_exists='append')
+df1 = pd.read_sql('tick_data600300',engine)
+print df1
+
+#有问题
