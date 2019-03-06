@@ -4,7 +4,8 @@
 import tushare as ts
 import pandas as pd
 import lxml
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine#这个不好用，一堆报错，还是用下面的官方工具吧
+import mysql.connector
 
 # print ts.get_hist_data('600848') #一次性获取全部日k线数据
 # df = ts.get_hist_data('000001',start='2017-01-01',end='2019-02-28')
@@ -39,10 +40,30 @@ from sqlalchemy import create_engine
 # data1=ts.get_today_ticks('300032')
 # print(data1)
 
-df = ts.get_hist_data('600300').iloc[:,:4]
-engine = create_engine('mysql://root:root@127.0.0.1/stock?charset=utf8')
-df.to_sql('tick_data600300',engine,if_exists='append')
-df1 = pd.read_sql('tick_data600300',engine)
-print df1
+#mysql连接 以下两种方法都可以，方法一更实用
 
-#有问题
+#尝试一 sqlalchemy
+# df = ts.get_hist_data('600300').iloc[:,:4]
+# engine = create_engine('mysql://root:root@127.0.0.1/stock?charset=utf8')
+# df.to_sql('tick_data600300',engine,if_exists='append')
+# df1 = pd.read_sql('tick_data600300',engine)
+# print df1
+
+engine = create_engine('mysql://root:root@localhost:3306/stock_test')
+sql = '''select * from stock_test_tbl; '''
+# read_sql_query的两个参数: sql语句， 数据库连接
+df = pd.read_sql_query(sql, engine)
+# 输出employee表的查询结果
+print(df)
+
+#尝试二  官方工具mysql-connector-python
+# mydb = mysql.connector.connect(
+#     host="localhost",  # 数据库主机地址
+#     user="root",  # 数据库用户名
+#     passwd="root"  # 数据库密码
+# )
+# mycursor = mydb.cursor()
+# mycursor.execute("SHOW databases")  # 0 为 第一条，1 为第二条，以此类推
+# myresult = mycursor.fetchall()
+# print myresult
+
