@@ -58,6 +58,7 @@ print df1
 # df = pd.read_sql_query(sql, engine)
 # # 输出employee表的查询结果
 # print(df)
+# #第一次执行仍报错，但是数据能导入，需要改进
 
 """
 # 新建pandas中的DataFrame, 只有id,num两列
