@@ -44,17 +44,28 @@ import mysql.connector
 
 #尝试一 sqlalchemy
 # df = ts.get_hist_data('600300').iloc[:,:4]
-# engine = create_engine('mysql://root:root@127.0.0.1/stock?charset=utf8')
+df = ts.get_hist_data('000001')
+engine = create_engine('mysql://root:root@localhost:3306/?charset=utf8')
+# engine = create_engine('mysql://root:root@localhost:3306/stock_test')
 # df.to_sql('tick_data600300',engine,if_exists='append')
-# df1 = pd.read_sql('tick_data600300',engine)
-# print df1
+df.to_sql('tick_data000001',engine,if_exists='append')
+df1 = pd.read_sql('tick_data000001',engine)
+print df1
 
-engine = create_engine('mysql://root:root@localhost:3306/stock_test')
-sql = '''select * from stock_test_tbl; '''
-# read_sql_query的两个参数: sql语句， 数据库连接
-df = pd.read_sql_query(sql, engine)
-# 输出employee表的查询结果
-print(df)
+# engine = create_engine('mysql://root:root@localhost:3306/stock_test')
+# sql = '''select * from stock_test_tbl; '''
+# # read_sql_query的两个参数: sql语句， 数据库连接
+# df = pd.read_sql_query(sql, engine)
+# # 输出employee表的查询结果
+# print(df)
+
+"""
+# 新建pandas中的DataFrame, 只有id,num两列
+df = pd.DataFrame({'id': [1, 2, 3, 4], 'name': ['zhangsan', 'lisi', 'wangwu', 'zhuliu']})
+# 将新建的DataFrame储存为MySQL中的数据表，储存index列
+df.to_sql('mydf', engine, index=True)
+print('Read from and write to Mysql table successfully!')
+"""
 
 #尝试二  官方工具mysql-connector-python
 # mydb = mysql.connector.connect(
