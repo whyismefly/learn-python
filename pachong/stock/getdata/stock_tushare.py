@@ -43,14 +43,14 @@ import mysql.connector
 #mysql连接 以下两种方法都可以，方法一更实用
 
 #尝试一 sqlalchemy
-# df = ts.get_hist_data('600300').iloc[:,:4]
-df = ts.get_hist_data('000001')
-engine = create_engine('mysql://root:root@localhost:3306/?charset=utf8')
-# engine = create_engine('mysql://root:root@localhost:3306/stock_test')
-# df.to_sql('tick_data600300',engine,if_exists='append')
-df.to_sql('tick_data000001',engine,if_exists='append')
-df1 = pd.read_sql('tick_data000001',engine)
-print df1
+# # df = ts.get_hist_data('600300').iloc[:,:4]
+# df = ts.get_hist_data('000001')
+# engine = create_engine('mysql://root:root@localhost:3306/stock_test?charset=utf8')
+# # engine = create_engine('mysql://root:root@localhost:3306/stock_test')
+# # df.to_sql('tick_data600300',engine,if_exists='append')
+# df.to_sql('tick_data000001',engine,if_exists='append')
+# df1 = pd.read_sql('tick_data000001',engine)
+# print df1
 
 # engine = create_engine('mysql://root:root@localhost:3306/stock_test')
 # sql = '''select * from stock_test_tbl; '''
