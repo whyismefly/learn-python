@@ -19,10 +19,11 @@ def get_basic_stockinfo_to_mysql():
     df1 = pd.read_sql('stockinfo',engine)
     print df1
 
-def get_basic_stockinfo_to_mysql1(host,port,database):
+def get_basic_stockinfo_to_mysql_choose(host,port,database):
     stock_info = ts.get_stock_basics()  # 大盘当日所有股票数据
     # print stock_info
     engine = create_engine('mysql://root:root@localhost:3306/stock_test?charset=utf8')
+
     stock_info.to_sql('stockinfo',engine,if_exists='append')
     df1 = pd.read_sql('stockinfo',engine)
     print df1
