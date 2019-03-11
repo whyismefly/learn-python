@@ -10,7 +10,14 @@ select count(*)  from stock_test.stockinfo where pe != 0 and pe <15;
 select *  from stock_test.stockinfo where pe != 0 and pe <15 order by pe DESC;
 select *  from stock_test.stockinfo where pe != 0 and pe <15 order by pe ASC;
 select *  from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0  order by pe ASC;
+
 select *,COUNT(*)AS industry_num from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry order by pe ASC;
+select industry,COUNT(*)AS industry_num from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry order by industry_num DESC;
+select * from stock_test.stockinfo where stockinfo.industry in(select industry from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry )order by industry ASC;
+
+
+/*需要根据行数再查询个股 */
+
 
 /*SELECT origin,count(*) num FROM user_operation_log GROUP BY origin;*/
 
