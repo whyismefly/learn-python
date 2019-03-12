@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!/usr/bin/python
 # encoding:utf-8
 a=list()
 print a
