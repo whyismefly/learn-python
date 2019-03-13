@@ -8,7 +8,7 @@ from sqlalchemy import create_engine#这个不好用，一堆报错，还是用�
 # ImportError: No module named MySQLdb
 #需要安装mysqlclient
 #pip install mysqlclient==1.3.4
-#新版本安装不上
+#最新版本安装不上
 
 def get_basic_stockinfo():
     stock_info = ts.get_stock_basics()  # 大盘当日所有股票数据
@@ -32,5 +32,5 @@ def get_basic_stockinfo_to_mysql_choose(host,port,database):
     print df1
 
 
-# get_basic_stockinfo_to_mysql()
+get_basic_stockinfo_to_mysql()
 # get_basic_stockinfo_to_mysql_choose("localhost","3306","stock_test")
