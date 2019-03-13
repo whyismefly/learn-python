@@ -21,6 +21,8 @@ select * from stock_test.stockinfo where stockinfo.industry in(select industry f
 
 /*SELECT origin,count(*) num FROM user_operation_log GROUP BY origin;*/
 
+SELECT * FROM stock_test.stockinfo LIMIT 0,10 -- 从第0行开始，查询后面的10行
+
 SET SQL_SAFE_UPDATES = 0;
 delete from stock_test.stockinfo;
 truncate table stock_test.stockinfo;#truncate没有log记录操作，数据不可恢复
