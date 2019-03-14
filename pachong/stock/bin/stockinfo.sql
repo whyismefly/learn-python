@@ -9,19 +9,20 @@ select *  from stock_test.stockinfo where pe != 0 and pe <15;
 select count(*)  from stock_test.stockinfo where pe != 0 and pe <15;
 select *  from stock_test.stockinfo where pe != 0 and pe <15 order by pe DESC;
 select *  from stock_test.stockinfo where pe != 0 and pe <15 order by pe ASC;
-select *  from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0  order by pe ASC;
+select *  from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0  order by industry,pe ASC,rev DESC,profit DESC,gpr DESC;
 
 select *,COUNT(*)AS industry_num from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry order by pe ASC;
 select industry,COUNT(*)AS industry_num from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry order by industry_num DESC;
 select * from stock_test.stockinfo where stockinfo.industry in(select industry from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry )order by industry ASC;
 
-
+/*
+(select industry from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0 GROUP BY industry) as a inner join
+(select *  from stock_test.stockinfo where pe != 0 and pe <15 and rev>0 and profit>0 and gpr>0  order by pe ASC) on ;
+ */
 /*需要根据行数再查询个股 */
 
 
 /*SELECT origin,count(*) num FROM user_operation_log GROUP BY origin;*/
-
-SELECT * FROM stock_test.stockinfo LIMIT 0,10 -- 从第0行开始，查询后面的10行
 
 SET SQL_SAFE_UPDATES = 0;
 delete from stock_test.stockinfo;
