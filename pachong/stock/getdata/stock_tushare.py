@@ -6,6 +6,9 @@ import pandas as pd
 import lxml
 from sqlalchemy import create_engine#这个不好用，一堆报错，还是用下面的官方工具吧
 import mysql.connector
+#matplotlib和seaborn都是比较常用的绘图工具，前者更加官方，后者好看更适合新手
+import matplotlib
+import matplotlib.pyplot as plt
 
 # print ts.get_hist_data('600848') #一次性获取全部日k线数据
 # df = ts.get_hist_data('000001',start='2017-01-01',end='2019-02-28')
@@ -78,4 +81,16 @@ print('Read from and write to Mysql table successfully!')
 # mycursor.execute("SHOW databases")  # 0 为 第一条，1 为第二条，以此类推
 # myresult = mycursor.fetchall()
 # print myresult
+
+
+# !/usr/bin/python2.7
+
+
+#绘图
+fig = plt.gcf()
+df = ts.get_hist_data('000001', start='2018-11-01')
+with pd.plotting.plot_params.use('x_compat', True):
+    df.high.plot(color='r', figsize=(10, 4), grid=True)
+    df.low.plot(color='b', figsize=(10, 4), grid=True)
+    fig.savefig('..\\data\\graph000001.png')
 
