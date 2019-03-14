@@ -124,7 +124,8 @@ fig1.savefig('.\\test.png')
 
 #通过pandas绘图
 # 1）plot方法及参数
-# 对于Series和DataFrame类型的数据，可以直接调用两种类型对应的plot方法，绘图时自动采用索引值绘制横坐标，采用每一列数据绘制纵坐标。这里分别以两类数据为例。
+# 对于Series和DataFrame类型的数据，可以直接调用两种类型对应的plot方法，绘图时自动采用索引值绘制横坐标，采用每一列数据绘
+# 制纵坐标。这里分别以两类数据为例。
 se1 = Series(np.random.randn(30).cumsum())
 df = DataFrame({'a': np.random.randn(30), 'b': np.random.randn(30)})
 # 2）频数图、散点图
@@ -132,11 +133,10 @@ df = DataFrame({'a': np.random.randn(30), 'b': np.random.randn(30)})
 se1.plot(kind = 'bar', color = 'g')
 #对角线上图形设置为核密度图
 pd.plotting.scatter_matrix(df, diagonal='kde')
-# ImportError: No module named scipy.stats,解决方法安装scipy
 # 3）清除和保存图形
-# 有时候，我们希望清除掉当前图形或者干脆关闭绘图窗口。可以采用figure的clear()方法清除图形，采用matplotlib.pylab的close（）方法则能够直接关闭图形窗口。
-df.plot()
+# 有时候，我们希望清除掉当前图形或者干脆关闭绘图窗口。可以采用figure的clear()方法清除图形，采用matplotlib.pylab的
+# close（）方法则能够直接关闭图形窗口。
+# df.plot().get_figure().clear()
 #清除绘图
-_.get_figure().clear()
 #关闭窗口
-plt.close()
+# plt.close()
