@@ -1,14 +1,18 @@
-#!/usr/bin/python
+#!/usr/bin/pytho
 # encoding:utf-8
 
 import tushare as ts
 import pandas as pd
+from pandas import Series,DataFrame
 import lxml
 from sqlalchemy import create_engine#这个不好用，一堆报错，还是用下面的官方工具吧
 import mysql.connector
 #matplotlib和seaborn都是比较常用的绘图工具，前者更加官方，后者好看更适合新手
 import matplotlib
 import matplotlib.pyplot as plt
+import numpy as np
+
+#参考https://www.cnblogs.com/onemorepoint/p/7210789.html
 
 # print ts.get_hist_data('600848') #一次性获取全部日k线数据
 # df = ts.get_hist_data('000001',start='2017-01-01',end='2019-02-28')
@@ -87,10 +91,52 @@ print('Read from and write to Mysql table successfully!')
 
 
 #绘图
-fig = plt.gcf()
-df = ts.get_hist_data('000001', start='2018-11-01')
-with pd.plotting.plot_params.use('x_compat', True):
-    df.high.plot(color='r', figsize=(10, 4), grid=True)
-    df.low.plot(color='b', figsize=(10, 4), grid=True)
-    fig.savefig('..\\data\\graph000001.png')
 
+#通过matplotlib标准库绘图
+
+# fig = plt.gcf()
+# df = ts.get_hist_data('000001', start='2018-11-01')
+# with pd.plotting.plot_params.use('x_compat', True):
+#     df.high.plot(color='r', figsize=(10, 4), grid=True)
+#     df.low.plot(color='b', figsize=(10, 4), grid=True)
+#     fig.savefig('..\\data\\graph000001.png')
+
+
+"""
+# 绘图第一步是创建绘图窗口fig。
+fig1 = plt.figure()
+# 在窗口上添加AxesSubplot类型的子绘图区域，一个窗口可以添加多个子绘图区。
+ax1 = fig1.add_subplot(2,2,1)
+ax4 = fig1.add_subplot(2,2,4)
+# 调用子绘图区的方法，可以绘制点线图、频数图、散点图等常用图形。
+# 注意：在同一个subplot中多次调用plot()，所得到的图形是相互覆盖的。
+ax1.plot(np.random.randn(50).cumsum(),'k--')
+ax4.hist(np.random.randn(30))
+# 主要关注以下几种方法：set_xlims设置坐标轴的上下限、set_ticks设置坐标刻度、set_ticklabel设置坐标标注。
+ax1.set_xlim(-10,60)
+ax1.set_xticks([0,20,40,60])
+ax1.set_xticklabels(['a','b','c','d'])
+# 用subplot的clear()方法可以清除现有的图形，用figure的savefig()保存图形到指定路径。
+ax1.clear()
+#windows下的路径
+fig1.savefig('.\\test.png')
+"""
+
+#通过pandas绘图
+# 1）plot方法及参数
+# 对于Series和DataFrame类型的数据，可以直接调用两种类型对应的plot方法，绘图时自动采用索引值绘制横坐标，采用每一列数据绘制纵坐标。这里分别以两类数据为例。
+se1 = Series(np.random.randn(30).cumsum())
+df = DataFrame({'a': np.random.randn(30), 'b': np.random.randn(30)})
+# 2）频数图、散点图
+# 频数图采用hist绘制即可，单幅的散点图还得依靠matplotlib库，但pandas提供多幅散点图矩阵的快速绘图方法。
+se1.plot(kind = 'bar', color = 'g')
+#对角线上图形设置为核密度图
+pd.plotting.scatter_matrix(df, diagonal='kde')
+# ImportError: No module named scipy.stats,解决方法安装scipy
+# 3）清除和保存图形
+# 有时候，我们希望清除掉当前图形或者干脆关闭绘图窗口。可以采用figure的clear()方法清除图形，采用matplotlib.pylab的close（）方法则能够直接关闭图形窗口。
+df.plot()
+#清除绘图
+_.get_figure().clear()
+#关闭窗口
+plt.close()
