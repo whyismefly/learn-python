@@ -122,6 +122,7 @@ ax1.clear()
 fig1.savefig('.\\test.png')
 """
 
+"""
 #通过pandas绘图
 # 1）plot方法及参数
 # 对于Series和DataFrame类型的数据，可以直接调用两种类型对应的plot方法，绘图时自动采用索引值绘制横坐标，采用每一列数据绘
@@ -140,3 +141,4 @@ pd.plotting.scatter_matrix(df, diagonal='kde')
 #清除绘图
 #关闭窗口
 # plt.close()
+"""
