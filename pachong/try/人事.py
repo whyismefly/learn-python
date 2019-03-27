@@ -67,7 +67,8 @@ def getlist():
             # https: // docs.sqlalchemy.org / en / latest / errors.html  # error-e3q8
             engine = create_engine("mysql://root:root@localhost:3306/stock_test?charset=utf8", pool_size=60, max_overflow=50)
             tb.to_sql('renshiwang2', engine, if_exists='append')
-            df1 = pd.read_sql('renshiwang2', engine)
+            # df1 = pd.read_sql('renshiwang2', engine)
+            # print df1
         end_time=datetime.datetime.now()
         print str(end_time)+" LIST DONE"
     except Exception,e:
