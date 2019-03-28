@@ -1,4 +1,4 @@
-#!/usr/bin/pytho
+#!/usr/bin/python
 # encoding:utf-8
 
 import tushare as ts
