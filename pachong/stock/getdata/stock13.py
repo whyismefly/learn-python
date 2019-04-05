@@ -54,7 +54,7 @@ Base.metadata.create_all(engine)
 
 stock_hist_data=ts.get_hist_data(shanying_stockid)
 stock_hist_data.to_sql("stock_hist_data",engine,if_exists='append',dtype={'date':sqlalchemy.types.VARCHAR(stock_hist_data.index.get_level_values("date").str.len().max())})
-
+session.commit()
 
 # # 动态添加字段
 # # for i in range(3):
