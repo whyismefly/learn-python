@@ -2,10 +2,11 @@
 # encoding:utf-8
 
 from sqlalchemy import *
-
+import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.mysql import DOUBLE
+import tushare as ts
 # from sqlalchemy.dialects.mysql import \
 #         BIGINT, BINARY, BIT, BLOB, BOOLEAN, CHAR, DATE, \
 #         DATETIME, DECIMAL, DECIMAL, DOUBLE, ENUM, FLOAT, INTEGER, \
@@ -27,11 +28,13 @@ engine = create_engine('mysql://root:root@localhost:3306/stock_test?charset=utf8
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+shanying_stockid="600567"
+
 # 定义类
 class stock_hist_class(Base):
     __tablename__ = 'stock_hist_data'
     id = Column(BigInteger, primary_key=True)
-    stockid=Column(String(10),index=True)
+    stockid=Column(String(10),index=True,server_default=shanying_stockid)
     date = Column(DateTime)
     open=Column(DOUBLE)
     high=Column(DOUBLE)
@@ -48,6 +51,10 @@ class stock_hist_class(Base):
     v_ma20=Column(DOUBLE)
 
 Base.metadata.create_all(engine)
+
+stock_hist_data=ts.get_hist_data(shanying_stockid)
+stock_hist_data.to_sql("stock_hist_data",engine,if_exists='append',dtype={'date':sqlalchemy.types.VARCHAR(stock_hist_data.index.get_level_values("date").str.len().max())})
+
 
 # # 动态添加字段
 # # for i in range(3):
