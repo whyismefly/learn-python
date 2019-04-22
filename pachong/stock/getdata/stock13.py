@@ -56,6 +56,9 @@ stock_hist_data=ts.get_hist_data(shanying_stockid)
 stock_hist_data.to_sql("stock_hist_data",engine,if_exists='append',dtype={'date':sqlalchemy.types.VARCHAR(stock_hist_data.index.get_level_values("date").str.len().max())})
 session.commit()
 
+# alter table custom_task_rule alter column offset set default 5;
+
+
 # # 动态添加字段
 # # for i in range(3):
 # #     setattr(stock_hist_class, 'Col' + str(i), (Column('Col' + str(i), String(50), comment='Col' + str(i))))
