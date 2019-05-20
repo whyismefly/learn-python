@@ -34,3 +34,12 @@ Referer: http://134.64.116.90:9185/ldc/home.jsp;jsessionid=n4yhcTvCJDTZ3n6HbSXGg
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
 """
+
+LOGIN_URL = 'http://yingxiao.chewumi.com/login.php'  #请求的URL地址
+DATA = {"username":'accountID',"passwd":'passwd'}   #登录系统的账号密码,也是我们请求数据
+
+HEADERS = {
+            'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36' #模拟登陆的浏览器
+           }
+RES = requests.post(LOGIN_URL,data=DATA,headers=HEADERS)  #模拟登陆操作
+print (RES.text) #打印返回的文本信息
