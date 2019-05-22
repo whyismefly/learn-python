@@ -5,6 +5,7 @@ import requests
 import urllib
 from bs4 import BeautifulSoup
 import pandas
+import cookielib
 
 """
 Request URL: http://134.64.116.90:8030/sdp/p1521813509851_AutoCreateZul_207.zul
