@@ -9,13 +9,13 @@ cookie={"BDUSS":
         "pyaVhZbE0yNDFzRmV1TlhnWTBVWWF2SVczcE0zd2hFVVNyY2NHeDE3T042bUpjQVFBQUFBJCQAAAAAAAAAAAEAAAD8SIsHd2h5aXNtZWZs"
         "eQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI1dO1yNXTtcOG"
 }
-# req=requests.get(url,cookies=cookie)
-# soup=BeautifulSoup(req.content,"lxml")
+req=requests.get(url,cookies=cookie)
+soup=BeautifulSoup(req.content,"lxml")
 # print soup
 #写法一
-# with open("baidu.html","wb") as file:
-#     file.write(soup.encode("utf-8"))
-#     file.close()
+with open("baidu.html","wb") as file:
+    file.write(soup.encode("utf-8"))
+    file.close()
 
 #写法二
 # html1 = open( "baidu1.html", "wb")
@@ -36,10 +36,10 @@ cookie={"BDUSS":
 # html1.close()
 
 
-url2="https://www.51test.net/show/9198407.html"
-req2=requests.get(url2)
-soup2=BeautifulSoup(req2.content,"lxml")
-# print soup2
-text = open( "baogao.txt", "wb")
-text.write(soup2.text.encode("utf-8"))
-text.close()
+# url2="https://www.51test.net/show/9198407.html"
+# req2=requests.get(url2)
+# soup2=BeautifulSoup(req2.content,"lxml")
+# # print soup2
+# text = open( "baogao.txt", "wb")
+# text.write(soup2.text.encode("utf-8"))
+# text.close()
