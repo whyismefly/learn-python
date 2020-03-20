@@ -34,11 +34,11 @@ def open_list(doc_path_name):
         return info
 
 
-# stock_list=["603019","002456","300232","600216","300296","002252"]
+stock_list=["603019","002456","300232","600216","300296","002252"]
 # stock_list="603019"
-# get_stocks_hist(stock_list)
-doc_path_name="G:/Desktop/code.txt"
-open_list(doc_path_name)
+get_stocks_hist(stock_list)
+# doc_path_name="G:/Desktop/code.txt"
+# open_list(doc_path_name)
 # get_basic_stockinfo_to_mysql()
 
 # now=time.strftime('%Y-%m-%d',time.localtime(time.time()))
