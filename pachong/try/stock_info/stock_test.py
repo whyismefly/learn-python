@@ -28,17 +28,26 @@ def get_basic_stockinfo_to_mysql():
     print (df1)
 
 def open_list(doc_path_name):
+    # with open(doc_path_name,mode='r',encoding="utf-8") as f:
+    #     info = f.read()
+    #     print(info)
+    #     return info
     with open(doc_path_name,mode='r',encoding="utf-8") as f:
         info = f.read()
-        print(info)
-        return info
+        code_list=[]
+        for line in info.split():
+            if line.isdigit():
+                code_list.append(line)
+        print(code_list)
+        return code_list
 
 
-stock_list=["603019","002456","300232","600216","300296","002252"]
+# stock_list=["603019","002456","300232","600216","300296","002252"]
 # stock_list="603019"
+doc_path_name="G:/Desktop/code.txt"
+stock_list=open_list(doc_path_name)
 get_stocks_hist(stock_list)
-# doc_path_name="G:/Desktop/code.txt"
-# open_list(doc_path_name)
+
 # get_basic_stockinfo_to_mysql()
 
 # now=time.strftime('%Y-%m-%d',time.localtime(time.time()))
