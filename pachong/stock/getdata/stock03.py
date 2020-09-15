@@ -2,7 +2,7 @@
 # encoding:utf-8
 
 from abc import ABCMeta, abstractmethod
-import re
+import retest
 import requests
 from bs4 import BeautifulSoup
 import sys

@@ -3,7 +3,7 @@
 
 import pymysql
 import jieba.analyse
-import re
+import retest
 from collections import Counter
 
 # conn=pymysql.connect(host="127.0.0.1", user="root", passwd="root", db="jxw", charset='utf8')
@@ -18,7 +18,7 @@ def cut_word(datapath):
     jieba.load_userdict(file_userdict)
     with open(datapath,'r',encoding='utf-8')as fp:
         string = fp.read()
-        data = re.sub(r"[\s+\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+——！，。？、~@#￥%……&*（）]+|[0-9]+", "", string)
+        data = retest.sub(r"[\s+\.\!\/_,$%^*(【】：\]\[\-:;+\"\']+|[+——！，。？、~@#￥%……&*（）]+|[0-9]+", "", string)
         word_list = jieba.cut(data)
 
         return word_list

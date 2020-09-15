@@ -1,5 +1,5 @@
 from nose.tools import *
-import re
+import retest
 
 def assert_response(resp, contains=None, matches=None, headers=None, status="200"):
 
@@ -12,7 +12,7 @@ def assert_response(resp, contains=None, matches=None, headers=None, status="200
         assert contains in resp.data, "Response does not contain %r" % contains
 
     if matches:
-        reg = re.compile(matches)
+        reg = retest.compile(matches)
         assert reg.matches(resp.data), "Response does not match %r" % matches
 
     if headers:

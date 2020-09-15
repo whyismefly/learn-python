@@ -3,7 +3,7 @@
 
 import urllib
 from bs4 import BeautifulSoup
-import re
+import retest
 
 # res = urllib.urlopen("http://www.baidu.com")
 # print res.read()
@@ -14,7 +14,7 @@ import re
 # print soup
 
 # 将正则表达式编译成Pattern对象
-pattern = re.compile(r'hello')
+pattern = retest.compile(r'hello')
 pattern.sub()
 # 使用Pattern匹配文本，获得匹配结果，无法匹配时将返回None
 match = pattern.match('hello world!')

@@ -4,7 +4,7 @@
 #导入需要使用到的模块
 import urllib
 import urllib.request
-import re
+import retest
 import pandas as pd
 import pymysql
 import os
@@ -18,7 +18,7 @@ def getHtml(url):
 #抓取网页股票代码函数
 def getStackCode(html):
     s = r'<li><a target="_blank" href="http://quote.eastmoney.com/\S\S(.*?).html">'
-    pat = re.compile(s)
+    pat = retest.compile(s)
     code = pat.findall(html)
     return code
 

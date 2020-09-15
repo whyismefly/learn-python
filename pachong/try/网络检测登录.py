@@ -6,8 +6,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
-import os,sys,re
+import unittest, time, retest
+import os,sys,retest
 import subprocess
 
 #网络状态检测
@@ -16,7 +16,7 @@ def NetCheck(ip):
     p = subprocess.Popen(["ping -c 1 -w 1 "+ ip],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
     out=p.stdout.read()
     #err=p.stderr.read()
-    regex=re.compile('100% packet loss')
+    regex=retest.compile('100% packet loss')
     #print out
     #print regex
     #print err

@@ -2,7 +2,7 @@
 # encoding:utf-8
 
 import urllib
-import re
+import retest
 import requests
 import bs4
 from bs4 import BeautifulSoup

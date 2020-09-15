@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # encoding:utf-8
 import requests
-import re
+import retest
 
 line = "Cats are smarter than dogs";
 URL = 'http://ip.taobao.com/service/getIpInfo.php'  # 淘宝IP地址库API
@@ -18,7 +18,7 @@ else:
 
 
 # matchObj = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
-searchObj = re.search(r'target.*', line, re.M | re.I)
+searchObj = retest.search(r'target.*', line, retest.M | retest.I)
 
 if searchObj:
     print "searchObj.group() : ", searchObj.group()
